@@ -4,7 +4,7 @@ runtime-version: '20.08'
 sdk: org.freedesktop.Sdk
 sdk-extensions:
   - org.freedesktop.Sdk.Extension.golang
-  - org.freedesktop.Sdk.Extension.node12
+  - org.freedesktop.Sdk.Extension.node14
 command: axolotl
 finish-args:
   # See https://docs.flatpak.org/en/latest/sandbox-permissions-reference.html
@@ -44,24 +44,24 @@ modules:
     sources:
       - type: git
         url: https://github.com/nanu-c/axolotl
-        tag: v0.9.9
-        commit: 515d9addc9416e91428bdf5969f5531a07812f83
+        tag: v1.0.0
+        commit: 57a5d46e4151e54c61cc1a649a26292ab17cc772
         dest: src/github.com/nanu-c/axolotl
       - type: git
         url: https://go.googlesource.com/crypto
-        commit: 9e8e0b390897c84cad53ebe9ed2d1d331a5394d9
+        commit: c07d793c2f9aacf728fe68cbd7acd73adbd04159
         dest: src/golang.org/x/crypto
       - type: git
         url: https://go.googlesource.com/net
-        commit: ff519b6c91021e6316e1df005bc19f266994ddda
+        commit: abc453219eb586afb3fc1742e8c685c28b9f7eea
         dest: src/golang.org/x/net
       - type: git
         url: https://go.googlesource.com/text
-        commit: 22f1617af38ed4cd65b3b96e02bab267e560155c
+        commit: 3115f89c4b99a620c7f1a4395a2b4405e95b82b6
         dest: src/golang.org/x/text
       - type: git
         url: https://go.googlesource.com/sys
-        commit: da207088b7d1961c44ec61e9dc15a73745693ab6
+        commit: 7ecdf8ef093be7d47cf2495d887560ebdc72a9e0
         dest: src/golang.org/x/sys
       - type: git
         url: https://github.com/ttacon/builder
@@ -69,8 +69,7 @@ modules:
         dest: src/github.com/ttacon/builder
       - type: git
         url: https://github.com/ttacon/libphonenumber
-        tag: v1.1.0
-        commit: a54d6839d954633947ca08f00020d7eac2bf27cd
+        commit: 759f71f653b20ae26a4ded88f69ed862055f0468
         dest: src/github.com/ttacon/libphonenumber
       - type: git
         url: https://github.com/signal-golang/mimemagic
@@ -82,40 +81,43 @@ modules:
         dest: src/github.com/signal-golang/ed25519
       - type: git
         url: https://github.com/signal-golang/textsecure
-        tag: v1.2.14
-        commit: f739ece2dd2547fb77a335ad5bbf21d2ac34839a
+        commit: b6fd3bb52dd3ce9f56a7e5273465139357c1552b
         dest: src/github.com/signal-golang/textsecure
       - type: git
         url: https://github.com/gen2brain/beeep
-        commit: e9c15c258e2846849da68e8014776a2f789e0fbd
+        commit: 5586760f0cc13dc45080831864366d13b233becb
         dest: src/github.com/gen2brain/beeep
       - type: git
+        url: https://github.com/nanu-c/zkgroup
+        commit: 10cca3620b9e8e3f18b47ededf34274f97ae9290
+        dest: src/github.com/nanu-c/zkgroup
+      - type: git
+        url: https://github.com/satori/go.uuid
+        commit: b2ce2384e17bbe0c6d34077efa39dbab3e09123b
+        dest: src/github.com/satori/go.uuid
+      - type: git
         url: https://github.com/asticode/go-astikit
-        tag: v0.17.0
-        commit: 4206e7c4e4f6a8b394f9d4872a90ecb4f094942e
+        commit: d2fe2bf377504264b3fad33e170563b1add13152
         dest: src/github.com/asticode/go-astikit
       - type: git
         url: https://github.com/asticode/go-astilectron
-        tag: v0.22.3
-        commit: 6aa7218e3824c7f63e15995e628c95a8b05afcd2
+        commit: ded625709bb58c4d43329d18a5c3d6073f8e966e
         dest: src/github.com/asticode/go-astilectron
       - type: git
         url: https://github.com/jmoiron/sqlx
-        tag: v1.2.0
-        commit: d161d7a76b5661016ad0b085869f77fd410f3e6a
+        commit: a62bc6088664eb854c3d5ebbd08a1ffd59662ef1
         dest: src/github.com/jmoiron/sqlx
       - type: git
         url: https://github.com/godbus/dbus
-        commit: 9eb6257e13ab38178e97d1f28cf5b444d035235a
+        commit: e6cb346e4ee46b3c65ab915ceeb0f3739c563c9b
         dest: src/github.com/godbus/dbus
       - type: git
         url: https://github.com/golang/protobuf
-        commit: 4846b58453b3708320bdb524f25cc5a1d9cda4d4
+        commit: ae97035608a719c7a1c1c41bed0ae0744bdb0c6f
         dest: src/github.com/golang/protobuf
       - type: git
         url: https://github.com/pkg/errors
-        tag: v0.9.1
-        commit: 614d223910a179a466c1767a985424175c39b465
+        commit: 5dd12d0cfe7f152f80558d591504ce685299311e
         dest: src/github.com/pkg/errors
       - type: git
         url: https://github.com/z3ntu/go-dbus
@@ -123,11 +125,11 @@ modules:
         dest: src/github.com/z3ntu/go-dbus
       - type: git
         url: https://github.com/mutecomm/go-sqlcipher
-        commit: 20debb6b4d00ca14aeb385f2b6195b64d613d063
+        commit: 25f68adb9fb3bc95229bee7e3498a6ca2f3e752d
         dest: src/github.com/mutecomm/go-sqlcipher
       - type: git
         url: https://github.com/emersion/go-vcard
-        commit: dd3110a24ec26a6b9f8a45da21cc0f2ca2ce8c67
+        commit: 3445b917199531cd5e7c88793c29ca496d863b0b
         dest: src/github.com/emersion/go-vcard
       - type: git
         url: https://github.com/vincent-petithory/dataurl
@@ -135,22 +137,19 @@ modules:
         dest: src/github.com/vincent-petithory/dataurl
       - type: git
         url: https://github.com/zserge/lorca
-        tag: v0.1.9
-        commit: 85b8622343aad82d32ef53efaa8d21d29990d930
+        commit: 1006348e1931ab40106e97ceefa9514ebd9ac9e5
         dest: src/github.com/zserge/lorca
       - type: git
         url: https://github.com/gorilla/websocket
-        tag: v1.4.2
-        commit: b65e62901fc1c0d968042419e74789f6af455eb9
+        commit: e8629af678b7fe13f35dff5e197de93b4148a909
         dest: src/github.com/gorilla/websocket
       - type: git
         url: https://github.com/sirupsen/logrus
-        tag: v1.7.0
-        commit: 6699a89a232f3db797f2e280639854bbc4b89725
+        commit: b50299cfaaa1bca85be76c8984070e846c7abfd2
         dest: src/github.com/sirupsen/logrus
       - type: git
         url: https://github.com/go-yaml/yaml
-        commit: b893565b90ca5ebaabd27e535c0e56f97856e5ff
+        commit: 7649d4548cb53a614db133b2a8ac1f31859dda8c
         dest: src/github.com/go-yaml/yaml
       - type: git
         url: https://github.com/pieterbork/ed25519
@@ -158,17 +157,15 @@ modules:
         dest: src/github.com/pieterbork/ed25519
       - type: git
         url: https://github.com/dustin/go-humanize
-        tag: v1.0.0
-        commit: 9f541cc9db5d55bce703bd99987c9d5cb8eea45e
+        commit: afde56e7acacd811f6c94228c2c61af2b0e93158
         dest: src/github.com/dustin/go-humanize
       - type: git
-        url: https://github.com/go-yaml/yaml
-        tag: v2.4.0
+        url: https://gopkg.in/yaml.v2
         commit: 7649d4548cb53a614db133b2a8ac1f31859dda8c
         dest: src/gopkg.in/yaml.v2
       - type: git
         url: https://go.googlesource.com/protobuf
-        commit: d3470999428befce9bbefe77980ff65ac5a494c4
+        commit: 426f20bc78ebadf3c32cd6e7cdaba378ea155521
         dest: src/google.golang.org/protobuf
 
   - name: axolotl-web-x86_64
@@ -176,10 +173,10 @@ modules:
     only-arches:
       - x86_64
     build-options:
-      prefix: /usr/lib/sdk/node12
-      prepend-path: /usr/lib/sdk/node12/bin
+      prefix: /usr/lib/sdk/node14
+      prepend-path: /usr/lib/sdk/node14/bin
     build-commands:
-      # Build using dependencies from archive.
+      # Build using dependencies from archive
       - "cd src/github.com/nanu-c/axolotl/axolotl-web;
          npm run build --production"
       - "mkdir -p ${FLATPAK_DEST}/bin/axolotl-web"
@@ -187,12 +184,12 @@ modules:
     sources:
       - type: git
         url: https://github.com/nanu-c/axolotl
-        tag: v0.9.9
-        commit: 515d9addc9416e91428bdf5969f5531a07812f83
+        tag: v1.0.0
+        commit: 57a5d46e4151e54c61cc1a649a26292ab17cc772
         dest: src/github.com/nanu-c/axolotl
       - type: archive
-        url: https://raw.githubusercontent.com/nanu-c/axolotl/add-arm64-axolotl-web-dependencies/flatpak/archives/axolotl-web-dependencies-x86_64-v0.9.9.tar.xz
-        sha256: 5506ed2d479147897ad0d232017c54cf25d4eb82f641dc23bc41c6ed2c27fcec
+        url: https://raw.githubusercontent.com/nanu-c/axolotl/main/flatpak/archives/axolotl-web-dependencies-x86_64-v1.0.0.tar.xz
+        sha256: 72ba3edaf981b31a986e56470020f6e7a3e8b4891624539f391ed53a7c6208c0
         dest: src/github.com/nanu-c/axolotl/axolotl-web/node_modules/
 
   - name: axolotl-web-arm64
@@ -200,10 +197,10 @@ modules:
     only-arches:
       - arm64
     build-options:
-      prefix: /usr/lib/sdk/node12
-      prepend-path: /usr/lib/sdk/node12/bin
+      prefix: /usr/lib/sdk/node14
+      prepend-path: /usr/lib/sdk/node14/bin
     build-commands:
-      # Build using dependencies from archive.
+      # Build using dependencies from archive
       - "cd src/github.com/nanu-c/axolotl/axolotl-web;
          npm run build --production"
       - "mkdir -p ${FLATPAK_DEST}/bin/axolotl-web"
@@ -211,12 +208,12 @@ modules:
     sources:
       - type: git
         url: https://github.com/nanu-c/axolotl
-        tag: v0.9.9
-        commit: 515d9addc9416e91428bdf5969f5531a07812f83
+        tag: v1.0.0
+        commit: 57a5d46e4151e54c61cc1a649a26292ab17cc772
         dest: src/github.com/nanu-c/axolotl
       - type: archive
-        url: https://raw.githubusercontent.com/nanu-c/axolotl/add-arm64-axolotl-web-dependencies/flatpak/archives/axolotl-web-dependencies-arm64-v0.9.9.tar.xz
-        sha256: 609ed5b464febcf16543ca57f06276ee302fddc9ce64fca31189392873136563
+        url: https://raw.githubusercontent.com/nanu-c/axolotl/main/flatpak/archives/axolotl-web-dependencies-arm64-v1.0.0.tar.xz
+        sha256: ae80897fd09f4e229e4ecada5d99c3af68a3897619cfc77908d6b936c79eb9bd
         dest: src/github.com/nanu-c/axolotl/axolotl-web/node_modules/
 
   - name: install
@@ -228,12 +225,6 @@ modules:
     sources:
       - type: git
         url: https://github.com/nanu-c/axolotl
-        tag: v0.9.9
-        commit: 515d9addc9416e91428bdf5969f5531a07812f83
+        tag: v1.0.0
+        commit: 57a5d46e4151e54c61cc1a649a26292ab17cc772
         dest: src/github.com/nanu-c/axolotl
-      # Use local appdata, with required screenshots included, until we have a new release.
-      # The updated file is already in place on the main branch, but was not included in release v0.9.9.
-      # Once the next release is out, remove org.nanuc.Axolotl.appdata.xml from this repo and remove this source.
-      - type: file
-        path: org.nanuc.Axolotl.appdata.xml
-        dest: src/github.com/nanu-c/axolotl/flatpak/
