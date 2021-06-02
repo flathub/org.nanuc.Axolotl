@@ -1,18 +1,18 @@
 # axolotl Flathub
 
-This repo is only for publishing the axolotl cross-platform Signal client to FlatHub.
+This repo is only for publishing the axolotl cross-platform Signal client to Flathub.
 
 For the full repository, see [GitHub](https://github.com/nanu-c/axolotl).
 
-The following section is for Axolotl Flathub packagers and maintainers.
+The following information is mainly interesting for Axolotl Flathub packagers and maintainers.
 
-## Update Flathub golang dependencies
+## Update golang dependencies
 
 A Flathub release must specify all its build dependencies, and may not use the `--share=network` flag.
 
-To generate the list of dependencies used, the following download-manifest can be used.
+Instead a list of dependencies is used. To generate this, the following download-manifest can be used.
 
-To use this manifest just store it in a file (example below uses `download-manifest.yml`) and use the following command. 
+To use this manifest just save it locally (example below uses `download-manifest.yml`) and use the following command. 
 
 ```shell
 flatpak-builder build download-manifest.yml --keep-build-dirs --force-clean
