@@ -4,7 +4,7 @@ runtime-version: '20.08'
 sdk: org.freedesktop.Sdk
 sdk-extensions:
   - org.freedesktop.Sdk.Extension.golang
-  - org.freedesktop.Sdk.Extension.node12
+  - org.freedesktop.Sdk.Extension.node14
 command: axolotl
 finish-args:
   # See https://docs.flatpak.org/en/latest/sandbox-permissions-reference.html
@@ -91,7 +91,6 @@ modules:
         url: https://github.com/nanu-c/zkgroup
         commit: 10cca3620b9e8e3f18b47ededf34274f97ae9290
         dest: src/github.com/nanu-c/zkgroup
-
       - type: git
         url: https://github.com/satori/go.uuid
         commit: b2ce2384e17bbe0c6d34077efa39dbab3e09123b
@@ -174,10 +173,10 @@ modules:
     only-arches:
       - x86_64
     build-options:
-      prefix: /usr/lib/sdk/node12
-      prepend-path: /usr/lib/sdk/node12/bin
+      prefix: /usr/lib/sdk/node14
+      prepend-path: /usr/lib/sdk/node14/bin
     build-commands:
-      # Build using dependencies from archive.
+      # Build using dependencies from archive
       - "cd src/github.com/nanu-c/axolotl/axolotl-web;
          npm run build --production"
       - "mkdir -p ${FLATPAK_DEST}/bin/axolotl-web"
@@ -185,12 +184,12 @@ modules:
     sources:
       - type: git
         url: https://github.com/nanu-c/axolotl
-        tag: v0.9.9
-        commit: 515d9addc9416e91428bdf5969f5531a07812f83
+        tag: v1.0.0
+        commit: 57a5d46e4151e54c61cc1a649a26292ab17cc772
         dest: src/github.com/nanu-c/axolotl
       - type: archive
-        url: https://raw.githubusercontent.com/nanu-c/axolotl/main/flatpak/archives/axolotl-web-dependencies-x86_64-v0.9.9.tar.xz
-        sha256: 5506ed2d479147897ad0d232017c54cf25d4eb82f641dc23bc41c6ed2c27fcec
+        url: https://raw.githubusercontent.com/nanu-c/axolotl/main/flatpak/archives/axolotl-web-dependencies-x86_64-v1.0.0.tar.xz
+        sha256: 72ba3edaf981b31a986e56470020f6e7a3e8b4891624539f391ed53a7c6208c0
         dest: src/github.com/nanu-c/axolotl/axolotl-web/node_modules/
 
   - name: axolotl-web-arm64
@@ -198,10 +197,10 @@ modules:
     only-arches:
       - arm64
     build-options:
-      prefix: /usr/lib/sdk/node12
-      prepend-path: /usr/lib/sdk/node12/bin
+      prefix: /usr/lib/sdk/node14
+      prepend-path: /usr/lib/sdk/node14/bin
     build-commands:
-      # Build using dependencies from archive.
+      # Build using dependencies from archive
       - "cd src/github.com/nanu-c/axolotl/axolotl-web;
          npm run build --production"
       - "mkdir -p ${FLATPAK_DEST}/bin/axolotl-web"
@@ -209,12 +208,12 @@ modules:
     sources:
       - type: git
         url: https://github.com/nanu-c/axolotl
-        tag: v0.9.9
-        commit: 515d9addc9416e91428bdf5969f5531a07812f83
+        tag: v1.0.0
+        commit: 57a5d46e4151e54c61cc1a649a26292ab17cc772
         dest: src/github.com/nanu-c/axolotl
       - type: archive
-        url: https://raw.githubusercontent.com/nanu-c/axolotl/main/flatpak/archives/axolotl-web-dependencies-arm64-v0.9.9.tar.xz
-        sha256: 609ed5b464febcf16543ca57f06276ee302fddc9ce64fca31189392873136563
+        url: https://raw.githubusercontent.com/nanu-c/axolotl/main/flatpak/archives/axolotl-web-dependencies-arm64-v1.0.0.tar.xz
+        sha256: ae80897fd09f4e229e4ecada5d99c3af68a3897619cfc77908d6b936c79eb9bd
         dest: src/github.com/nanu-c/axolotl/axolotl-web/node_modules/
 
   - name: install
@@ -226,12 +225,6 @@ modules:
     sources:
       - type: git
         url: https://github.com/nanu-c/axolotl
-        tag: v0.9.9
-        commit: 515d9addc9416e91428bdf5969f5531a07812f83
+        tag: v1.0.0
+        commit: 57a5d46e4151e54c61cc1a649a26292ab17cc772
         dest: src/github.com/nanu-c/axolotl
-      # Use local appdata, with required screenshots included, until we have a new release.
-      # The updated file is already in place on the main branch, but was not included in release v0.9.9.
-      # Once the next release is out, remove org.nanuc.Axolotl.appdata.xml from this repo and remove this source.
-      - type: file
-        path: org.nanuc.Axolotl.appdata.xml
-        dest: src/github.com/nanu-c/axolotl/flatpak/

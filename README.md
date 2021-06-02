@@ -1,19 +1,21 @@
-# axolotl FlatHub
+# axolotl Flathub
 
 This repo is only for publishing the axolotl cross-platform Signal client to FlatHub.
 
 For the full repository, see [GitHub](https://github.com/nanu-c/axolotl).
 
-## FlatHub golang dependencies
+The following section is for Axolotl Flathub packagers and maintainers.
 
-A FlatHub release must specify all its build dependencies, and may not use the `--share=network` flag.
+## Update Flathub golang dependencies
 
-To generate the list of dependencies used, the following mini-manifest can be used.
+A Flathub release must specify all its build dependencies, and may not use the `--share=network` flag.
 
-To use this mini-manifest just store it in a file and use the following command. 
+To generate the list of dependencies used, the following download-manifest can be used.
+
+To use this manifest just store it in a file (example below uses `download-manifest.yml`) and use the following command. 
 
 ```shell
-flatpak-builder build mini-manifest.yml --keep-build-dirs --force-clean
+flatpak-builder build download-manifest.yml --keep-build-dirs --force-clean
 ```
 
 ```yaml
@@ -41,7 +43,7 @@ The resulting build folder is then given as an input to the [Flatpak Go Get Gene
 ./flatpak-go-get-generator.py ../../org.nanuc.Axolotl/.flatpak-builder/build/axolotl-4
 ```
 
-Convert to yaml and add to the Axolotl manifest file, to the axolotl section.
+Convert to the output to yaml and add to the Axolotl manifest file, to the axolotl module section.
 
 ```shell
 cat axolotl-4-sources.json | yq --yaml-output
