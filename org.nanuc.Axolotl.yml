@@ -57,18 +57,6 @@ modules:
         commit: 6acb5f861c3a4f62ba419e2fddbdffad117689cc
         dest: src/github.com/nanu-c/zkgroup
 
-  - name: zkgroup-armhf
-    buildsystem: simple
-    only-arches:
-      - armhf
-    build-commands:
-      - "install -Dm 755 src/github.com/nanu-c/zkgroup/lib/libzkgroup_linux_armhf.so ${FLATPAK_DEST}/lib"
-    sources:
-      - type: git
-        url: https://github.com/nanu-c/zkgroup
-        commit: 6acb5f861c3a4f62ba419e2fddbdffad117689cc
-        dest: src/github.com/nanu-c/zkgroup
-
   - name: axolotl
     buildsystem: simple
     build-options:
@@ -77,7 +65,7 @@ modules:
     build-commands:
       - "go env -w GOPATH=$PWD GO111MODULE=auto;
          go build -v github.com/nanu-c/axolotl"
-      - "install -Dm 755 axolotl ${FLATPAK_DEST}/bin/axolotl"
+      - "install -Dm 755 src/github.com/nanu-c/axolotl/axolotl ${FLATPAK_DEST}/bin/axolotl"
     sources:
       - type: git
         url: https://github.com/nanu-c/axolotl
