@@ -65,7 +65,7 @@ modules:
     build-commands:
       - "go env -w GOPATH=$PWD GO111MODULE=auto;
          go build -v github.com/nanu-c/axolotl"
-      - "ls -la" #debug
+      - "mkdir ${FLATPAK_DEST}/bin"
       - "install -Dm 755 axolotl ${FLATPAK_DEST}/bin/axolotl"
     sources:
       - type: git
