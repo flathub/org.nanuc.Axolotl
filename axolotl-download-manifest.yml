@@ -12,8 +12,8 @@ modules:
       append-path: /usr/lib/sdk/golang/bin
       env:
         GOBIN: /app/bin
-        GOROOT: /usr/lib/sdk/golang
+        GO111MODULE: off
       build-args:
         - --share=network
     build-commands:
-      - "go env -w GOPATH=$PWD; go env -w GO111MODULE=off; go get -v github.com/nanu-c/axolotl"
+      - "go env -w GOPATH=$PWD; go get -v github.com/nanu-c/axolotl"
