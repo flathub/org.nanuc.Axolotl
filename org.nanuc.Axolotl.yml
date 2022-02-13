@@ -59,8 +59,8 @@ modules:
     sources:
       - type: git
         url: https://github.com/nanu-c/axolotl
-        tag: v1.0.9
-        commit: ed1f2487852bbf957c1894bf454b369f17db8063
+        tag: v1.1.0
+        commit: 2c5cd15243335281b4e9b43333e51127ebfd6c0d
         dest: src/github.com/nanu-c/axolotl
       - generated-crayfish-sources.json
 
@@ -92,8 +92,8 @@ modules:
     sources:
       - type: git
         url: https://github.com/nanu-c/axolotl
-        tag: v1.0.9
-        commit: ed1f2487852bbf957c1894bf454b369f17db8063
+        tag: v1.1.0
+        commit: 2c5cd15243335281b4e9b43333e51127ebfd6c0d
         dest: src/github.com/nanu-c/axolotl
       - generated-axolotl-sources.json
       - generated-axolotl-web-sources.0.json
@@ -108,8 +108,8 @@ modules:
     sources:
       - type: git
         url: https://github.com/nanu-c/axolotl
-        tag: v1.0.9
-        commit: ed1f2487852bbf957c1894bf454b369f17db8063
+        tag: v1.1.0
+        commit: 2c5cd15243335281b4e9b43333e51127ebfd6c0d
         dest: src/github.com/nanu-c/axolotl
       # Wrapper to launch the app
       - type: script
