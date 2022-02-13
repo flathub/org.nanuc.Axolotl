@@ -54,7 +54,8 @@ modules:
       env:
         CARGO_HOME: /run/build/crayfish/cargo
     build-commands:
-      - make --directory=src/github.com/nanu-c/axolotl build-crayfish
+      - cargo fetch --manifest-path src/github.com/nanu-c/axolotl/crayfish/Cargo.toml
+      - make --directory=src/github.com/nanu-c/axolotl --environment-overrides build-crayfish
       - make --directory=src/github.com/nanu-c/axolotl --environment-overrides install-crayfish
     sources:
       - type: git
@@ -70,6 +71,7 @@ modules:
       env:
         CARGO_HOME: /run/build/zkgroup/cargo
     build-commands:
+      - cargo fetch --manifest-path src/github.com/nanu-c/zkgroup/lib/zkgroup/Cargo.toml
       - cargo build --manifest-path src/github.com/nanu-c/zkgroup/lib/zkgroup/Cargo.toml --release
       - install -Dm 755 src/github.com/nanu-c/zkgroup/lib/zkgroup/target/release/libzkgroup.so ${FLATPAK_DEST}/lib/libzkgroup_linux_${FLATPAK_ARCH}.so
     sources:
