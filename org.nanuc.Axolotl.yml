@@ -13,7 +13,7 @@ separate-locales: false
 build-options:
   append-path: "/usr/lib/sdk/rust-stable/bin:/usr/lib/sdk/golang/bin:/usr/lib/sdk/node16/bin"
   env:
-    CARGO_HOME: ${FLATPAK_BUILDER_BUILDDIR}/.cargo
+    CARGO_NET_OFFLINE: true
     GOBIN: /app/bin
     GOROOT: /usr/lib/sdk/golang
     NPM_CONFIG_LOGLEVEL: error
@@ -50,6 +50,9 @@ finish-args:
 modules:
   - name: crayfish
     buildsystem: simple
+    build-options:
+      env:
+        CARGO_HOME: /run/build/crayfish/cargo
     build-commands:
       - make --directory=src/github.com/nanu-c/axolotl build-crayfish
       - make --directory=src/github.com/nanu-c/axolotl --environment-overrides install-crayfish
@@ -63,6 +66,9 @@ modules:
 
   - name: zkgroup
     buildsystem: simple
+    build-options:
+      env:
+        CARGO_HOME: /run/build/zkgroup/cargo
     build-commands:
       - cargo build --manifest-path src/github.com/nanu-c/zkgroup/lib/zkgroup/Cargo.toml --release
       - install -Dm 755 src/github.com/nanu-c/zkgroup/lib/zkgroup/target/release/libzkgroup.so ${FLATPAK_DEST}/lib/libzkgroup_linux_${FLATPAK_ARCH}.so
