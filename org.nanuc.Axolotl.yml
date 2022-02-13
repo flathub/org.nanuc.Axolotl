@@ -74,7 +74,7 @@ modules:
         dest: src/github.com/nanu-c/zkgroup
       - generated-zkgroup-sources.json
 
-  - name: axolotl-electron-bundle-x86_64
+  - name: axolotl-electron-bundle
     buildsystem: simple
     build-commands:
       - make --directory=src/github.com/nanu-c/axolotl build-dependencies-axolotl-web
@@ -92,15 +92,23 @@ modules:
       - generated-axolotl-sources.json
       - generated-axolotl-web-sources.0.json
 
-  - name: install
+  - name: metadata
     buildsystem: simple
     build-commands:
-      - "install -Dm 644 src/github.com/nanu-c/axolotl/flatpak/org.nanuc.Axolotl.png ${FLATPAK_DEST}/share/icons/hicolor/128x128/apps/${FLATPAK_ID}.png"
-      - "install -Dm 644 src/github.com/nanu-c/axolotl/flatpak/org.nanuc.Axolotl.appdata.xml ${FLATPAK_DEST}/share/appdata/${FLATPAK_ID}.appdata.xml"
-      - "install -Dm 644 src/github.com/nanu-c/axolotl/flatpak/web/org.nanuc.Axolotl.desktop ${FLATPAK_DEST}/share/applications/${FLATPAK_ID}.desktop"
+      - install -Dm 644 src/github.com/nanu-c/axolotl/flatpak/org.nanuc.Axolotl.png ${FLATPAK_DEST}/usr/share/icons/hicolor/128x128/apps/${FLATPAK_ID}.png
+      - install -Dm 644 src/github.com/nanu-c/axolotl/flatpak/org.nanuc.Axolotl.appdata.xml ${FLATPAK_DEST}/share/appdata/${FLATPAK_ID}.appdata.xml
+      - install -Dm 644 src/github.com/nanu-c/axolotl/flatpak/web/org.nanuc.Axolotl.desktop ${FLATPAK_DEST}/share/applications/${FLATPAK_ID}.desktop
+      - install -Dm 755 run.sh ${FLATPAK_DEST}${INSTALL_PREFIX}/run.sh
     sources:
       - type: git
         url: https://github.com/nanu-c/axolotl
         tag: v1.0.9
         commit: ed1f2487852bbf957c1894bf454b369f17db8063
         dest: src/github.com/nanu-c/axolotl
+      # Wrapper to launch the app
+      - type: script
+        dest-filename: run.sh
+        commands:
+          - export DISPLAY=:0
+          - export WAYLAND_DISPLAY=wayland-0
+          - zypak-wrapper /app/bin/axolotl-electron-bundle "$@"
