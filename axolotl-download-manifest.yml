@@ -1,0 +1,19 @@
+app-id: org.nanuc.GoAxolotlDependencies
+runtime: org.freedesktop.Platform
+runtime-version: '21.08'
+sdk: org.freedesktop.Sdk
+sdk-extensions:
+  - org.freedesktop.Sdk.Extension.golang
+command: echo "Done"
+modules:
+  - name: axolotl
+    buildsystem: simple
+    build-options:
+      append-path: /usr/lib/sdk/golang/bin
+      env:
+        GOBIN: /app/bin
+        GOROOT: /usr/lib/sdk/golang
+      build-args:
+        - --share=network
+    build-commands:
+      - "go env -w GOPATH=$PWD; go env -w GO111MODULE=off; go get -v github.com/nanu-c/axolotl"
