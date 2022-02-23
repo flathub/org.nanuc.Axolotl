@@ -1,0 +1,38 @@
+[
+  {
+    "type": "git",
+    "url": "https://github.com/sam-kamerer/go-plister",
+    "commit": "0a4452daf7a2f5ee46dc9fba2e85097c99802dd0",
+    "dest": "src/github.com/sam-kamerer/go-plister"
+  },
+  {
+    "type": "git",
+    "url": "https://github.com/asticode/go-astilectron-bundler",
+    "commit": "9ca0b71fdf5533e4aa17f7587fb747d3874a7315",
+    "dest": "src/github.com/asticode/go-astilectron-bundler"
+  },
+  {
+    "type": "git",
+    "url": "https://github.com/asticode/go-astikit",
+    "commit": "90ba62473fa9911d2629ac860c1f998f0b12c88b",
+    "dest": "src/github.com/asticode/go-astikit"
+  },
+  {
+    "type": "git",
+    "url": "https://github.com/asticode/go-astilectron",
+    "commit": "5317e8218ad3c677aef1d025287aab00d67f3d7f",
+    "dest": "src/github.com/asticode/go-astilectron"
+  },
+  {
+    "type": "git",
+    "url": "https://github.com/asticode/go-bindata",
+    "commit": "5ad1fa75c07e881fbf05d8aa29bf88008c0da5ab",
+    "dest": "src/github.com/asticode/go-bindata"
+  },
+  {
+    "type": "git",
+    "url": "https://github.com/akavel/rsrc",
+    "commit": "936343600d578fb5da472acf6987ed76935a389b",
+    "dest": "src/github.com/akavel/rsrc"
+  }
+]

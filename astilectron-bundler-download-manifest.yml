@@ -1,4 +1,4 @@
-app-id: org.nanuc.GoAxolotlDependencies
+app-id: org.nanuc.GoBundlerlDependencies
 runtime: org.freedesktop.Platform
 runtime-version: '21.08'
 sdk: org.freedesktop.Sdk
@@ -6,15 +6,15 @@ sdk-extensions:
   - org.freedesktop.Sdk.Extension.golang
 command: echo "Done"
 modules:
-  - name: axolotl
+  - name: astilectron-bundler
     buildsystem: simple
     build-options:
       append-path: /usr/lib/sdk/golang/bin
       env:
         GOBIN: /app/bin
         GO111MODULE: off
-        GOPATH: /run/build/axolotl
+        GOPATH: /run/build/astilectron-bundler
       build-args:
         - --share=network
     build-commands:
-      - go get -v github.com/nanu-c/axolotl
+      - go get -v github.com/asticode/go-astilectron-bundler/astilectron-bundler
