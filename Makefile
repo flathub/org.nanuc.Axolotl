@@ -1,9 +1,13 @@
-
 FLATPAK=$(shell which flatpak)
 FLATPAK_BUILDER=$(shell which flatpak-builder)
+PYTHON=$(shell which python3)
 
 FLATPAK_MANIFEST=org.nanuc.Axolotl.yml
+FLATPAK_APPID=org.nanuc.Axolotl
+
 FLATPAK_BUILD_FLAGS=--verbose --force-clean
+FLATPAK_INSTALL_FLAGS=--verbose --user --install --force-clean
+FLATPAK_DEBUG_FLAGS=--verbose --run
 
 .PHONY: build-dependencies
 build-dependencies:
@@ -16,6 +20,7 @@ build-dependencies:
 
 .PHONY: build
 build:
+	@echo "Building flatpak..."
 	$(FLATPAK_BUILDER) build $(FLATPAK_BUILD_FLAGS) $(FLATPAK_MANIFEST)
 
 .PHONY: build-crayfish
@@ -37,3 +42,46 @@ build-electron-bundle:
 .PHONY: debug
 debug:
 	$(FLATPAK_BUILDER) --run --verbose build $(FLATPAK_MANIFEST) sh
+
+.PHONY: install
+install:
+	@echo "Installing flatpak..."
+	$(FLATPAK_BUILDER) build $(FLATPAK_INSTALL_FLAGS) $(FLATPAK_MANIFEST)
+
+.PHONY: uninstall
+uninstall:
+	$(FLATPAK) uninstall --delete-data --assumeyes $(FLATPAK_APPID)
+
+.PHONY: run
+run:
+	$(FLATPAK) run $(FLATPAK_APPID)
+
+.PHONY: generate-astilectron-bundler-sources
+generate-astilectron-bundler-sources:
+	$(FLATPAK_BUILDER) build astilectron-bundler-download-manifest.yml \
+		--verbose \
+		--keep-build-dirs \
+		--force-clean
+	$(PYTHON) flatpak-builder-tools/go-get/flatpak-go-get-generator.py .flatpak-builder/build/astilectron-bundler
+	mv astilectron-bundler-sources.json generated-astilectron-bundler-sources.json
+
+.PHONY: generate-axolotl-sources
+generate-axolotl-sources:
+	$(FLATPAK_BUILDER) build axolotl-download-manifest.yml \
+		--verbose \
+		--keep-build-dirs \
+		--force-clean
+	$(PYTHON) flatpak-builder-tools/go-get/flatpak-go-get-generator.py .flatpak-builder/build/axolotl
+	mv axolotl-sources.json generated-axolotl-sources.json
+
+.PHONY: generate-zkgroup-sources
+generate-zkgroup-sources:
+	$(PYTHON) flatpak-builder-tools/cargo/flatpak-cargo-generator.py \
+        ../zkgroup/lib/zkgroup/Cargo.lock \
+        --output generated-zkgroup-sources.json
+
+.PHONY: generate-crayfish-sources
+generate-crayfish-sources:
+	$(PYTHON) flatpak-builder-tools/cargo/flatpak-cargo-generator.py \
+        ../axolotl/crayfish/Cargo.lock \
+        --output generated-crayfish-sources.json

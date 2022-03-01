@@ -4,7 +4,7 @@ runtime-version: '21.08'
 sdk: org.freedesktop.Sdk
 sdk-extensions:
   - org.freedesktop.Sdk.Extension.golang
-command: echo "Done"
+command: axolotl
 modules:
   - name: axolotl
     buildsystem: simple

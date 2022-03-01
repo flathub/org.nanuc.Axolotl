@@ -41,15 +41,11 @@ For Cargo, [flatpak-cargo-generator](https://github.com/flatpak/flatpak-builder-
 provided.
 
 ```shell
-python3 flatpak-builder-tools/cargo/flatpak-cargo-generator.py \
-    ../axolotl/crayfish/Cargo.lock \
-    --output generated-crayfish-sources.json
+make generate-crayfish-sources
 ```
 
 ```shell
-python3 flatpak-builder-tools/cargo/flatpak-cargo-generator.py \
-    ../zkgroup/lib/zkgroup/Cargo.lock \
-    --output generated-zkgroup-sources.json
+make generate-zkgroup-sources
 ```
 
 ## Go sources
@@ -60,27 +56,11 @@ provided.
 ### axolotl
 
 ```shell
-flatpak-builder build axolotl-download-manifest.yml --verbose --keep-build-dirs --force-clean
-```
-
-```shell
-python3 flatpak-builder-tools/go-get/flatpak-go-get-generator.py .flatpak-builder/build/axolotl
-```
-
-```shell
-mv axolotl-sources.json generated-axolotl-sources.json
+make generate-axolotl-sources
 ```
 
 ### astilectron-bundler
 
 ```shell
-flatpak-builder build astilectron-bundler-download-manifest.yml --verbose --keep-build-dirs --force-clean
-```
-
-```shell
-python3 flatpak-builder-tools/go-get/flatpak-go-get-generator.py .flatpak-builder/build/astilectron-bundler/
-```
-
-```shell
-mv astilectron-bundler-sources.json generated-astilectron-bundler-sources.json
+make generate-astilectron-bundler-sources
 ```
