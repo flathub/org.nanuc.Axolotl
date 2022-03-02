@@ -13,9 +13,9 @@
   },
   {
     "type": "git",
-    "url": "https://github.com/signal-golang/go-vcard",
-    "commit": "22758d4a089d06f5e61e046974795f2be6349dad",
-    "dest": "src/github.com/signal-golang/go-vcard"
+    "url": "https://github.com/emersion/go-vcard",
+    "commit": "3445b917199531cd5e7c88793c29ca496d863b0b",
+    "dest": "src/github.com/emersion/go-vcard"
   },
   {
     "type": "git",
@@ -32,7 +32,7 @@
   {
     "type": "git",
     "url": "https://github.com/signal-golang/textsecure",
-    "commit": "53684eb9c15b35d543f67f7f204ff74cc3bd46d2",
+    "commit": "97f45ae3740e7a554ceb16482a174120b4543646",
     "dest": "src/github.com/signal-golang/textsecure"
   },
   {

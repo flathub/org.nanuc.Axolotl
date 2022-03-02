@@ -15,9 +15,6 @@ build-options:
   env:
     CARGO_NET_OFFLINE: true
     npm_config_nodedir: /usr/lib/sdk/node16
-    GOBIN: /app/bin
-    GO111MODULE: off
-    GOROOT: /usr/lib/sdk/golang
 cleanup:
   - /app/bin/astilectron-bundler
 finish-args:
@@ -127,6 +124,8 @@ modules:
         DESTDIR: ${FLATPAK_DEST}
         INSTALL_PREFIX: /bin
         HOME: /run/build/axolotl-electron-bundle
+        GOBIN: /app/bin
+        GO111MODULE: off
         GOPATH: /run/build/axolotl-electron-bundle
     subdir: src/github.com/nanu-c/axolotl
     build-commands:
@@ -135,7 +134,8 @@ modules:
       - yarn config --offline set yarn-offline-mirror ${FLATPAK_BUILDER_BUILDDIR}/flatpak-node/yarn-mirror
       - yarn --cwd axolotl-web --offline --frozen-lockfile
       - make build-axolotl-web
-      - cd src/github.com/nanu-c/axolotl; echo "$(jq '. + { working_directory_path:"/app/lib/astibundler" }' bundler.json)" > bundler.json
+      # Specify bundler working directory (where Electron and Astilectron is)
+      - echo "$(jq '. + { working_directory_path:"/app/lib/astibundler" }' bundler.json)" > bundler.json
       - make build-axolotl-electron-bundle
       - make --environment-overrides install-axolotl-electron-bundle
     sources:
@@ -157,14 +157,18 @@ modules:
       - install -Dm 644 flatpak/org.nanuc.Axolotl.png ${FLATPAK_DEST}/usr/share/icons/hicolor/128x128/apps/${FLATPAK_ID}.png
       - install -Dm 644 flatpak/org.nanuc.Axolotl.appdata.xml ${FLATPAK_DEST}/share/appdata/${FLATPAK_ID}.appdata.xml
       - install -Dm 644 flatpak/web/org.nanuc.Axolotl.desktop ${FLATPAK_DEST}/share/applications/${FLATPAK_ID}.desktop
-      - install -Dm 755 run.sh ${FLATPAK_DEST}${INSTALL_PREFIX}/run.sh
     sources:
       - type: git
         url: https://github.com/nanu-c/axolotl
         tag: v1.1.0
         commit: 2c5cd15243335281b4e9b43333e51127ebfd6c0d
         dest: src/github.com/nanu-c/axolotl
-      # Wrapper to launch the app
+
+  - name: run
+      buildsystem: simple
+      build-commands:
+        - install -Dm 755 run.sh ${FLATPAK_DEST}/bin/run.sh
+      sources:
       - type: script
         dest-filename: run.sh
         commands:
