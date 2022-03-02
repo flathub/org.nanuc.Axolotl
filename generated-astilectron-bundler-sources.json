@@ -20,7 +20,7 @@
   {
     "type": "git",
     "url": "https://github.com/asticode/go-astilectron",
-    "commit": "5317e8218ad3c677aef1d025287aab00d67f3d7f",
+    "commit": "dd96670c04950b8df57fd5c17c36a1df218a9872",
     "dest": "src/github.com/asticode/go-astilectron"
   },
   {

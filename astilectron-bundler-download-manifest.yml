@@ -4,7 +4,6 @@ runtime-version: '21.08'
 sdk: org.freedesktop.Sdk
 sdk-extensions:
   - org.freedesktop.Sdk.Extension.golang
-command: astilectron-bundler
 modules:
   - name: astilectron-bundler
     buildsystem: simple
@@ -17,4 +16,4 @@ modules:
       build-args:
         - --share=network
     build-commands:
-      - go get -v github.com/asticode/go-astilectron-bundler/astilectron-bundler
+      - go get -v -d github.com/asticode/go-astilectron-bundler/astilectron-bundler

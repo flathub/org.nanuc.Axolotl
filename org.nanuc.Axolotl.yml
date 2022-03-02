@@ -59,12 +59,12 @@ modules:
       - make --environment-overrides build-crayfish
       - make --environment-overrides install-crayfish
     sources:
+      - generated-crayfish-sources.json
       - type: git
         url: https://github.com/nanu-c/axolotl
         tag: v1.1.0
         commit: 2c5cd15243335281b4e9b43333e51127ebfd6c0d
         dest: src/github.com/nanu-c/axolotl
-      - generated-crayfish-sources.json
 
   - name: zkgroup
     buildsystem: simple
@@ -77,12 +77,12 @@ modules:
       - cargo build --release
       - install -Dm 755 target/release/libzkgroup.so ${FLATPAK_DEST}/lib/libzkgroup_linux_${FLATPAK_ARCH}.so
     sources:
+      - generated-zkgroup-sources.json
       - type: git
         url: https://github.com/nanu-c/zkgroup
         tag: v0.9.0
         commit: e00e74649ddc88eff10ba8e4c40dafdb06dcf494
         dest: src/github.com/nanu-c/zkgroup
-      - generated-zkgroup-sources.json
 
   - name: astilectron-bundler
     buildsystem: simple
@@ -95,12 +95,12 @@ modules:
     build-commands:
       - go install -v github.com/asticode/go-astilectron-bundler/...
     sources:
+      - generated-astilectron-bundler-sources.json
       - type: git
         url: https://github.com/asticode/go-astilectron-bundler
         tag: v0.7.12
         commit: 9ca0b71fdf5533e4aa17f7587fb747d3874a7315
         dest: src/github.com/asticode/go-astilectron-bundler
-      - generated-astilectron-bundler-sources.json
 
   - name: astilectron-bundler-resources
     buildsystem: simple
@@ -139,6 +139,8 @@ modules:
       - make build-axolotl-electron-bundle
       - make --environment-overrides install-axolotl-electron-bundle
     sources:
+      - generated-axolotl-web-sources.0.json
+      - generated-axolotl-sources.json
       - type: git
         url: https://github.com/nanu-c/axolotl
         tag: v1.1.0
@@ -147,8 +149,6 @@ modules:
       - type: file
         path: yarn.lock
         dest: src/github.com/nanu-c/axolotl/axolotl-web
-      - generated-axolotl-web-sources.0.json
-      - generated-axolotl-sources.json
 
   - name: metadata
     buildsystem: simple
