@@ -165,13 +165,13 @@ modules:
         dest: src/github.com/nanu-c/axolotl
 
   - name: run
-      buildsystem: simple
-      build-commands:
-        - install -Dm 755 run.sh ${FLATPAK_DEST}/bin/run.sh
-      sources:
-      - type: script
-        dest-filename: run.sh
-        commands:
-          - export DISPLAY=:0
-          - export WAYLAND_DISPLAY=wayland-0
-          - zypak-wrapper /app/bin/axolotl-electron-bundle "$@"
+    buildsystem: simple
+    build-commands:
+      - install -Dm 755 run.sh ${FLATPAK_DEST}/bin/run.sh
+    sources:
+    - type: script
+      dest-filename: run.sh
+      commands:
+        - export DISPLAY=:0
+        - export WAYLAND_DISPLAY=wayland-0
+        - zypak-wrapper /app/bin/axolotl-electron-bundle "$@"
