@@ -52,6 +52,8 @@ modules:
         INSTALL_PREFIX: /bin
     subdir: src/github.com/nanu-c/axolotl
     build-commands:
+      # remove cargo config as to use default linker
+      - rm -f crayfish/.cargo/config
       - cargo fetch --manifest-path crayfish/Cargo.toml
       - make --environment-overrides build-crayfish
       - make --environment-overrides install-crayfish
