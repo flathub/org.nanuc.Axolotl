@@ -123,16 +123,14 @@ modules:
       env:
         DESTDIR: ${FLATPAK_DEST}
         INSTALL_PREFIX: /bin
-        HOME: /run/build/axolotl-electron-bundle
+        npm_config_offline: "true"
+        npm_config_cache: /run/build/axolotl-electron-bundle/flatpak-node/npm-cache
         GOBIN: /app/bin
         GO111MODULE: off
         GOPATH: /run/build/axolotl-electron-bundle
     subdir: src/github.com/nanu-c/axolotl
     build-commands:
-      # Replace npm with yarn
-      - rm -f axolotl-web/package-lock.json
-      - yarn config --offline set yarn-offline-mirror ${FLATPAK_BUILDER_BUILDDIR}/flatpak-node/yarn-mirror
-      - yarn --cwd axolotl-web --offline --frozen-lockfile
+      - make --environment-overrides build-dependencies-axolotl-web
       - make build-axolotl-web
       # Specify bundler working directory (where Electron and Astilectron is)
       - echo "$(jq '. + { working_directory_path:"/app/lib/astibundler" }' bundler.json)" > bundler.json
@@ -146,9 +144,6 @@ modules:
         tag: v1.1.0
         commit: 2c5cd15243335281b4e9b43333e51127ebfd6c0d
         dest: src/github.com/nanu-c/axolotl
-      - type: file
-        path: yarn.lock
-        dest: src/github.com/nanu-c/axolotl/axolotl-web
 
   - name: metadata
     buildsystem: simple

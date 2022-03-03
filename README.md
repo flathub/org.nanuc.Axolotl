@@ -12,27 +12,21 @@ A Flathub release must specify all its build dependencies, and may not use the `
 
 Instead, a fixed list of dependencies is used. To generate these, Flathub provides some python scripts.
 
+Before executing the below scripts, make sure to check out the relevant git tag in the axolotl repository.
+
 ## NPM sources
 
 For NPM, [flatpak-node-generator](https://github.com/flatpak/flatpak-builder-tools/blob/master/node/README.md) is
 provided.
 
-The current version of "@vue/cli-service" dependency has a problematic "vue-loader-v15" dependency
-which the node-generator script does not handle well when using NPM. Solution: we generate the lock file with yarn.
+There are some problematic npm dependencies which at the moment causes the node-generator to fail.
+
+What does work however, is using the branch from [this MR](https://github.com/flatpak/flatpak-builder-tools/pull/259),
+in addition to a small second adjustment:
+see [this comment](https://github.com/flatpak/flatpak-builder-tools/issues/251#issuecomment-998024781).
 
 ```shell
-yarn install --cwd ../axolotl/axolotl-web
-```
-
-Using this as listed below gives us a list of dependencies.
-
-```shell
-python3 flatpak-builder-tools/node/flatpak-node-generator.py \
-    yarn ../axolotl/axolotl-web/yarn.lock \
-    --recursive \
-    --xdg-layout \
-    --split \
-    --output generated-axolotl-web-sources.json
+make generate-axolotl-web-sources
 ```
 
 ## Cargo sources
