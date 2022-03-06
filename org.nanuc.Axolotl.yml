@@ -73,7 +73,7 @@ modules:
     subdir: src/github.com/nanu-c/zkgroup/lib/zkgroup
     build-commands:
       - cargo fetch
-      - cargo build --release
+      - cargo build --target ${FLATPAK_ARCH}-unknown-linux-gnu --release
       - install -Dm 755 target/release/libzkgroup.so ${FLATPAK_DEST}/lib/libzkgroup_linux_${FLATPAK_ARCH}.so
     sources:
       - generated-zkgroup-sources.json
