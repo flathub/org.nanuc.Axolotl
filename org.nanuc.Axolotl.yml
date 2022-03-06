@@ -52,8 +52,6 @@ modules:
         INSTALL_PREFIX: /bin
     subdir: src/github.com/nanu-c/axolotl
     build-commands:
-      # remove cargo config as to use default linker
-      - rm -f crayfish/.cargo/config
       - cargo fetch --manifest-path crayfish/Cargo.toml
       - make --environment-overrides build-crayfish
       - make --environment-overrides install-crayfish
@@ -67,16 +65,10 @@ modules:
 
   - name: zkgroup
     buildsystem: simple
-    build-options:
-      env:
-        CARGO_HOME: /run/build/zkgroup/cargo
-    subdir: src/github.com/nanu-c/zkgroup/lib/zkgroup
+    subdir: src/github.com/nanu-c/zkgroup/lib
     build-commands:
-      - cargo fetch
-      - cargo build --target ${FLATPAK_ARCH}-unknown-linux-gnu --release
-      - install -Dm 755 target/release/libzkgroup.so ${FLATPAK_DEST}/lib/libzkgroup_linux_${FLATPAK_ARCH}.so
+      - install -Dm 755 libzkgroup_linux_${FLATPAK_ARCH}.so ${FLATPAK_DEST}/lib/libzkgroup_linux_${FLATPAK_ARCH}.so
     sources:
-      - generated-zkgroup-sources.json
       - type: git
         url: https://github.com/nanu-c/zkgroup
         tag: v0.9.0

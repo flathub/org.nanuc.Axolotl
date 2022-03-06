@@ -5,7 +5,7 @@ PYTHON=$(shell which python3)
 FLATPAK_MANIFEST=org.nanuc.Axolotl.yml
 FLATPAK_APPID=org.nanuc.Axolotl
 
-FLATPAK_BUILD_FLAGS=--verbose --force-clean
+FLATPAK_BUILD_FLAGS=--verbose --force-clean --install-deps-from=flathub
 FLATPAK_INSTALL_FLAGS=--verbose --user --install --force-clean
 FLATPAK_DEBUG_FLAGS=--verbose --run
 
@@ -51,7 +51,7 @@ build-electron-bundle:
 
 .PHONY: debug
 debug:
-	$(FLATPAK_BUILDER) --run --verbose build $(FLATPAK_MANIFEST) sh
+	$(FLATPAK_BUILDER) $(FLATPAK_DEBUG_FLAGS) build $(FLATPAK_MANIFEST) sh
 
 .PHONY: install
 install:
