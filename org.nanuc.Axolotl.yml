@@ -41,6 +41,8 @@ finish-args:
   - --talk-name=org.freedesktop.Notifications
   # Run with bundled Electron
   - --env=AXOLOTL_ELECTRON_BUNDLED="true"
+  # Specify axolotl-web location
+  - --env=AXOLOTL_WEB_DIR=/app/lib/astibundler/bind/axolotl-web/dist
 
 modules:
   - name: crayfish
