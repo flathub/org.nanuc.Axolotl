@@ -15,6 +15,9 @@ build-options:
   env:
     CARGO_NET_OFFLINE: true
     npm_config_nodedir: /usr/lib/sdk/node16
+    GIT_CONFIG_COUNT: 1
+    GIT_CONFIG_KEY_0: advice.detachedHead
+    GIT_CONFIG_VALUE_0: false
 cleanup:
   - /app/bin/astilectron-bundler
 finish-args:
@@ -57,7 +60,7 @@ modules:
       # remove custom cargo linker config
       - rm -f crayfish/.cargo/config
       - cargo fetch --manifest-path crayfish/Cargo.toml
-      - make --environment-overrides build-crayfish
+      - make build-crayfish
       - make --environment-overrides install-crayfish
     sources:
       - generated-crayfish-sources.json
@@ -153,7 +156,7 @@ modules:
         GOPATH: /run/build/axolotl-electron-bundle
     subdir: src/github.com/nanu-c/axolotl
     build-commands:
-      - make --environment-overrides build-dependencies-axolotl-web
+      - make build-dependencies-axolotl-web
       - make build-axolotl-web
       # Specify bundler working directory (where Electron and Astilectron is)
       - echo "$(jq '. + { working_directory_path:"/app/lib/astibundler" }' bundler.json)" > bundler.json

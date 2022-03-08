@@ -27,31 +27,49 @@ build:
 
 .PHONY: build-crayfish
 build-crayfish:
+	@echo "Building crayfish..."
 	$(FLATPAK_BUILDER) build $(FLATPAK_BUILD_FLAGS) --stop-at=zkgroup $(FLATPAK_MANIFEST)
 
 .PHONY: build-zkgroup
 build-zkgroup:
+	@echo "Building zkgroup..."
 	$(FLATPAK_BUILDER) build $(FLATPAK_BUILD_FLAGS) --stop-at=astilectron-bundler $(FLATPAK_MANIFEST)
 
 .PHONY: build-astilectron-bundler
 build-astilectron-bundler:
+	@echo "Building astilectron-bundler..."
 	$(FLATPAK_BUILDER) build $(FLATPAK_BUILD_FLAGS) --stop-at=axolotl-electron-bundle $(FLATPAK_MANIFEST)
 
 .PHONY: build-astilectron-bundler-resources
 build-astilectron-bundler-resources:
+	@echo "Building astilectron-bundler-resources..."
 	$(FLATPAK_BUILDER) build $(FLATPAK_BUILD_FLAGS) --stop-at=axolotl-electron-bundle $(FLATPAK_MANIFEST)
 
 .PHONY: build-electron-bundle
 build-electron-bundle:
+	@echo "Building electron-bundle..."
 	$(FLATPAK_BUILDER) build $(FLATPAK_BUILD_FLAGS) --stop-at=metadata $(FLATPAK_MANIFEST)
 
 .PHONY: build-metadata
-build-electron-bundle:
+build-metadata:
+	@echo "Building metadata..."
 	$(FLATPAK_BUILDER) build $(FLATPAK_BUILD_FLAGS) --stop-at=run $(FLATPAK_MANIFEST)
 
 .PHONY: debug
 debug:
 	$(FLATPAK_BUILDER) $(FLATPAK_DEBUG_FLAGS) build $(FLATPAK_MANIFEST) sh
+
+.PHONY: debug-crayfish
+debug-crayfish:
+	$(FLATPAK_BUILDER) build $(FLATPAK_MANIFEST) --build-shell=crayfish
+
+.PHONY: debug-zkgroup
+debug-zkgroup:
+	$(FLATPAK_BUILDER) build $(FLATPAK_MANIFEST) --build-shell=zkgroup
+
+.PHONY: debug-electron-bundle
+debug-electron-bundle:
+	$(FLATPAK_BUILDER) build $(FLATPAK_MANIFEST) --build-shell=axolotl-electron-bundle
 
 .PHONY: debug-installed
 debug-installed:
