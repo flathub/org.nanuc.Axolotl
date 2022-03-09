@@ -160,7 +160,8 @@ modules:
       - make build-axolotl-web
       # Specify bundler working directory (where Electron and Astilectron is)
       - echo "$(jq '. + { working_directory_path:"/app/lib/astibundler" }' bundler.json)" > bundler.json
-      - make build-axolotl-electron-bundle
+      - make build-axolotl-electron-bundle &
+        while [ -e /proc/$! ]; do echo -n "."; sleep 100; done
       - make --environment-overrides install-axolotl-electron-bundle
     sources:
       - generated-axolotl-web-sources.0.json
