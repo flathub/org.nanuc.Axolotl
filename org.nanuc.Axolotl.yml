@@ -53,21 +53,19 @@ modules:
     build-options:
       env:
         CARGO_HOME: /run/build/crayfish/cargo
-        DESTDIR: ${FLATPAK_DEST}
-        INSTALL_PREFIX: /bin
     subdir: src/github.com/nanu-c/axolotl
     build-commands:
       # remove custom cargo linker config
       - rm -f crayfish/.cargo/config
       - cargo fetch --manifest-path crayfish/Cargo.toml
       - make build-crayfish
-      - make --environment-overrides install-crayfish
+      - make install-crayfish DESTDIR=${FLATPAK_DEST} INSTALL_PREFIX=/bin
     sources:
       - generated-crayfish-sources.json
       - type: git
         url: https://github.com/nanu-c/axolotl
-        tag: v1.1.0
-        commit: 2c5cd15243335281b4e9b43333e51127ebfd6c0d
+        tag: v1.2.0
+        commit: 6553d285db6f0f05a566b9c8df31753b3ad7baf4
         dest: src/github.com/nanu-c/axolotl
 
   - name: zkgroup
@@ -147,8 +145,6 @@ modules:
     buildsystem: simple
     build-options:
       env:
-        DESTDIR: ${FLATPAK_DEST}
-        INSTALL_PREFIX: /bin
         npm_config_offline: "true"
         npm_config_cache: /run/build/axolotl-electron-bundle/flatpak-node/npm-cache
         GOBIN: /app/bin
@@ -162,14 +158,14 @@ modules:
       - echo "$(jq '. + { working_directory_path:"/app/lib/astibundler" }' bundler.json)" > bundler.json
       - make build-axolotl-electron-bundle &
         while [ -e /proc/$! ]; do echo -n "."; sleep 100; done
-      - make --environment-overrides install-axolotl-electron-bundle
+      - make install-axolotl-electron-bundle DESTDIR=${FLATPAK_DEST} INSTALL_PREFIX=/bin
     sources:
       - generated-axolotl-web-sources.0.json
       - generated-axolotl-sources.json
       - type: git
         url: https://github.com/nanu-c/axolotl
-        tag: v1.1.0
-        commit: 2c5cd15243335281b4e9b43333e51127ebfd6c0d
+        tag: v1.2.0
+        commit: 6553d285db6f0f05a566b9c8df31753b3ad7baf4
         dest: src/github.com/nanu-c/axolotl
 
   - name: metadata
@@ -182,8 +178,8 @@ modules:
     sources:
       - type: git
         url: https://github.com/nanu-c/axolotl
-        tag: v1.1.0
-        commit: 2c5cd15243335281b4e9b43333e51127ebfd6c0d
+        tag: v1.2.0
+        commit: 6553d285db6f0f05a566b9c8df31753b3ad7baf4
         dest: src/github.com/nanu-c/axolotl
 
   - name: run

@@ -1,13 +1,13 @@
-FLATPAK=$(shell which flatpak)
-FLATPAK_BUILDER=$(shell which flatpak-builder)
-PYTHON=$(shell which python3)
+FLATPAK := $(shell which flatpak)
+FLATPAK_BUILDER := $(shell which flatpak-builder)
+PYTHON := $(shell which python3)
 
 FLATPAK_MANIFEST=org.nanuc.Axolotl.yml
 FLATPAK_APPID=org.nanuc.Axolotl
 
-FLATPAK_BUILD_FLAGS=--verbose --force-clean --install-deps-from=flathub --ccache
-FLATPAK_INSTALL_FLAGS=--verbose --force-clean --ccache --user --install
-FLATPAK_DEBUG_FLAGS=--verbose --run
+FLATPAK_BUILD_FLAGS := --verbose --force-clean --install-deps-from=flathub --ccache
+FLATPAK_INSTALL_FLAGS := --verbose --force-clean --ccache --user --install
+FLATPAK_DEBUG_FLAGS := --verbose --run
 
 all: build
 

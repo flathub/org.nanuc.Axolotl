@@ -13,9 +13,9 @@
   },
   {
     "type": "git",
-    "url": "https://github.com/emersion/go-vcard",
-    "commit": "3445b917199531cd5e7c88793c29ca496d863b0b",
-    "dest": "src/github.com/emersion/go-vcard"
+    "url": "https://github.com/signal-golang/go-vcard",
+    "commit": "22758d4a089d06f5e61e046974795f2be6349dad",
+    "dest": "src/github.com/signal-golang/go-vcard"
   },
   {
     "type": "git",
@@ -32,7 +32,7 @@
   {
     "type": "git",
     "url": "https://github.com/signal-golang/textsecure",
-    "commit": "97f45ae3740e7a554ceb16482a174120b4543646",
+    "commit": "53684eb9c15b35d543f67f7f204ff74cc3bd46d2",
     "dest": "src/github.com/signal-golang/textsecure"
   },
   {
@@ -68,7 +68,7 @@
   {
     "type": "git",
     "url": "https://github.com/nanu-c/axolotl",
-    "commit": "d75635e7446b4cedf854c8a38df134f4706e236e",
+    "commit": "6553d285db6f0f05a566b9c8df31753b3ad7baf4",
     "dest": "src/github.com/nanu-c/axolotl"
   },
   {
@@ -80,13 +80,13 @@
   {
     "type": "git",
     "url": "https://github.com/godbus/dbus",
-    "commit": "e523abc905595cf17fb0001a7d77eaaddfaa216d",
+    "commit": "fc37d31d420cc2c028b15215d88c6870dea51b10",
     "dest": "src/github.com/godbus/dbus"
   },
   {
     "type": "git",
     "url": "https://github.com/dustin/go-humanize",
-    "commit": "249ff6c91207eb7d29cdd84d01f921def792922a",
+    "commit": "d5090ed65664713c1e0f7ad94613c85b26174690",
     "dest": "src/github.com/dustin/go-humanize"
   },
   {
@@ -128,13 +128,13 @@
   {
     "type": "git",
     "url": "https://github.com/asticode/go-astikit",
-    "commit": "64a2fd2c44e26dc405dd20e0af37a706476ed77c",
+    "commit": "4ba43aee86681c99fd72a8ea6758778b554dceaf",
     "dest": "src/github.com/asticode/go-astikit"
   },
   {
     "type": "git",
     "url": "https://github.com/asticode/go-astilectron",
-    "commit": "dd96670c04950b8df57fd5c17c36a1df218a9872",
+    "commit": "18cf1d532adc9860ff3c11df738a896127d203de",
     "dest": "src/github.com/asticode/go-astilectron"
   },
   {
@@ -182,7 +182,7 @@
   {
     "type": "git",
     "url": "https://go.googlesource.com/sys",
-    "commit": "4e6760a101f91a504f519f184f6c860395889426",
+    "commit": "2edf467146b5fc89e484991587e3032c8421ae8c",
     "dest": "src/golang.org/x/sys"
   },
   {
@@ -194,7 +194,7 @@
   {
     "type": "git",
     "url": "https://go.googlesource.com/crypto",
-    "commit": "86341886e2925764dc890ad96c141a1bc76043af",
+    "commit": "3147a52a75dda54ac3a611ef8978640d85188a2a",
     "dest": "src/golang.org/x/crypto"
   },
   {

@@ -21,8 +21,7 @@ provided.
 
 There are some problematic npm dependencies which at the moment causes the node-generator to fail.
 
-What does work however, is using the branch from [this MR](https://github.com/flatpak/flatpak-builder-tools/pull/259),
-in addition to a small second adjustment:
+With a single line adjustment, see [node-generator.patch](./node-generator.patch), this problem can be fixed. 
 see [this comment](https://github.com/flatpak/flatpak-builder-tools/issues/251#issuecomment-998024781).
 
 ```shell
