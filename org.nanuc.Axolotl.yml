@@ -53,15 +53,13 @@ modules:
     build-options:
       env:
         CARGO_HOME: /run/build/crayfish/cargo
-        DESTDIR: ${FLATPAK_DEST}
-        INSTALL_PREFIX: /bin
     subdir: src/github.com/nanu-c/axolotl
     build-commands:
       # remove custom cargo linker config
       - rm -f crayfish/.cargo/config
       - cargo fetch --manifest-path crayfish/Cargo.toml
       - make build-crayfish
-      - make --environment-overrides install-crayfish
+      - make install-crayfish DESTDIR=${FLATPAK_DEST} INSTALL_PREFIX=/bin
     sources:
       - generated-crayfish-sources.json
       - type: git
@@ -147,8 +145,6 @@ modules:
     buildsystem: simple
     build-options:
       env:
-        DESTDIR: ${FLATPAK_DEST}
-        INSTALL_PREFIX: /bin
         npm_config_offline: "true"
         npm_config_cache: /run/build/axolotl-electron-bundle/flatpak-node/npm-cache
         GOBIN: /app/bin
@@ -162,7 +158,7 @@ modules:
       - echo "$(jq '. + { working_directory_path:"/app/lib/astibundler" }' bundler.json)" > bundler.json
       - make build-axolotl-electron-bundle &
         while [ -e /proc/$! ]; do echo -n "."; sleep 100; done
-      - make --environment-overrides install-axolotl-electron-bundle
+      - make install-axolotl-electron-bundle DESTDIR=${FLATPAK_DEST} INSTALL_PREFIX=/bin
     sources:
       - generated-axolotl-web-sources.0.json
       - generated-axolotl-sources.json
