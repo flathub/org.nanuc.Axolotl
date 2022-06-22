@@ -15,11 +15,9 @@ build-options:
   env:
     CARGO_NET_OFFLINE: true
     npm_config_nodedir: /usr/lib/sdk/node16
-    GIT_CONFIG_COUNT: 2
+    GIT_CONFIG_COUNT: 1
     GIT_CONFIG_KEY_0: advice.detachedHead
     GIT_CONFIG_VALUE_0: false
-    GIT_CONFIG_KEY_1: http.sslVerify
-    GIT_CONFIG_VALUE_1: false
 cleanup:
   - /app/bin/astilectron-bundler
 finish-args:
@@ -165,9 +163,9 @@ modules:
       - generated-axolotl-web-sources.0.json
       - generated-axolotl-sources.json
       - type: git
-        url: https://github.com/nanu-c/axolotl
-        tag: v1.3.0
-        commit: b571e05cc86547702b4ac8756b0d76f1d25e0535
+        url: https://github.com/olof-nord/axolotl
+        tag: fix-mic-recorder-to-mp3-dependency
+        commit: eb0188257d9fdd39a33ce12349cab807156c6ef5
         dest: src/github.com/nanu-c/axolotl
 
   - name: metadata
