@@ -15,9 +15,11 @@ build-options:
   env:
     CARGO_NET_OFFLINE: true
     npm_config_nodedir: /usr/lib/sdk/node16
-    GIT_CONFIG_COUNT: 1
+    GIT_CONFIG_COUNT: 2
     GIT_CONFIG_KEY_0: advice.detachedHead
     GIT_CONFIG_VALUE_0: false
+    GIT_CONFIG_KEY_1: http.sslVerify
+    GIT_CONFIG_VALUE_1: false
 cleanup:
   - /app/bin/astilectron-bundler
 finish-args:
