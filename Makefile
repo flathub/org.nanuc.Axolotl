@@ -88,6 +88,10 @@ uninstall:
 run:
 	$(FLATPAK) run $(FLATPAK_APPID)
 
+.PHONY: update-submodules
+update-submodules:
+	git submodule foreach git pull
+
 .PHONY: generate-astilectron-bundler-sources
 generate-astilectron-bundler-sources:
 	@echo "Generating astilectron-bundler sources..."
