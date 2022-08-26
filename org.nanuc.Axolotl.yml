@@ -64,8 +64,8 @@ modules:
       - generated-crayfish-sources.json
       - type: git
         url: https://github.com/nanu-c/axolotl
-        tag: v1.2.0
-        commit: 6553d285db6f0f05a566b9c8df31753b3ad7baf4
+        tag: v1.5.0
+        commit: 2ef7605c0bf5b69ed79e10a25c1832c9a31cee7c
         dest: src/github.com/nanu-c/axolotl
 
   - name: zkgroup
@@ -164,8 +164,8 @@ modules:
       - generated-axolotl-sources.json
       - type: git
         url: https://github.com/nanu-c/axolotl
-        tag: v1.2.0
-        commit: 6553d285db6f0f05a566b9c8df31753b3ad7baf4
+        tag: v1.5.0
+        commit: 2ef7605c0bf5b69ed79e10a25c1832c9a31cee7c
         dest: src/github.com/nanu-c/axolotl
 
   - name: metadata
@@ -178,8 +178,8 @@ modules:
     sources:
       - type: git
         url: https://github.com/nanu-c/axolotl
-        tag: v1.2.0
-        commit: 6553d285db6f0f05a566b9c8df31753b3ad7baf4
+        tag: v1.5.0
+        commit: 2ef7605c0bf5b69ed79e10a25c1832c9a31cee7c
         dest: src/github.com/nanu-c/axolotl
 
   - name: run

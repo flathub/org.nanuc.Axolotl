@@ -1,6 +1,7 @@
 FLATPAK := $(shell which flatpak)
 FLATPAK_BUILDER := $(shell which flatpak-builder)
 PYTHON := $(shell which python3)
+FLATPAK_NODE_GENERATOR := $(shell which flatpak-node-generator)
 
 FLATPAK_MANIFEST=org.nanuc.Axolotl.yml
 FLATPAK_APPID=org.nanuc.Axolotl
@@ -88,6 +89,14 @@ uninstall:
 run:
 	$(FLATPAK) run $(FLATPAK_APPID)
 
+.PHONY: update-submodules
+update-submodules:
+	git submodule foreach git pull
+
+.PHONY: install-flatpak-node-generator
+install-flatpak-node-generator:
+	pipx install ./flatpak-builder-tools/node
+
 .PHONY: generate-astilectron-bundler-sources
 generate-astilectron-bundler-sources:
 	@echo "Generating astilectron-bundler sources..."
@@ -111,10 +120,8 @@ generate-axolotl-sources:
 .PHONY: generate-axolotl-web-sources
 generate-axolotl-web-sources:
 	@echo "Generating axolotl-web sources..."
-	$(PYTHON) flatpak-builder-tools/node/flatpak-node-generator.py \
-	npm ../axolotl/axolotl-web/package-lock.json \
+	$(FLATPAK_NODE_GENERATOR) npm ../axolotl/axolotl-web/package-lock.json \
         --recursive \
-        --xdg-layout \
         --split \
         --output generated-axolotl-web-sources.json
 
