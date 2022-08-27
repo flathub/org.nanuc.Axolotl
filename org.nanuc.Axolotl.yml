@@ -164,8 +164,8 @@ modules:
       - generated-axolotl-sources.json
       - type: git
         url: https://github.com/nanu-c/axolotl
-        tag: v1.5.0
-        commit: 2ef7605c0bf5b69ed79e10a25c1832c9a31cee7c
+        tag: main #TODO use a tagged version, probably 1.5.1
+        commit: 467c3ba45d3d9e44b86b1230714cb91dd8488cd4
         dest: src/github.com/nanu-c/axolotl
 
   - name: metadata
