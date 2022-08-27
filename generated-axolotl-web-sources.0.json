@@ -286,6 +286,13 @@
     },
     {
         "type": "file",
+        "url": "https://registry.npmjs.org/@jmd01/mic-recorder-to-mp3/-/mic-recorder-to-mp3-2.2.3.tgz",
+        "sha512": "f93790d4f97b479069598537c9028a53db8f005cc043fd18a9e8d91575ddc96481a6381ae55f6fa7e33c4bb410fd8dc2ccb9cf60d2144291c051ec5ce8379a72",
+        "dest-filename": "90d4f97b479069598537c9028a53db8f005cc043fd18a9e8d91575ddc96481a6381ae55f6fa7e33c4bb410fd8dc2ccb9cf60d2144291c051ec5ce8379a72",
+        "dest": "flatpak-node/npm-cache/_cacache/content-v2/sha512/f9/37"
+    },
+    {
+        "type": "file",
         "url": "https://registry.npmjs.org/@jridgewell/gen-mapping/-/gen-mapping-0.3.2.tgz",
         "sha512": "9a1eb9c4a400cc8ea205c173c2fdbc29559298291d4415a83a1f9b610196dfee8e66f6db3774ea306a3986a631427891707f45d95648a090a6e296b704f0cafc",
         "dest-filename": "b9c4a400cc8ea205c173c2fdbc29559298291d4415a83a1f9b610196dfee8e66f6db3774ea306a3986a631427891707f45d95648a090a6e296b704f0cafc",
@@ -3512,12 +3519,6 @@
         "dest": "flatpak-node/npm-cache/_cacache/content-v2/sha512/ad/59"
     },
     {
-        "type": "git",
-        "url": "https://git@github.com/NikolaBalaban/mic-recorder-to-mp3.git",
-        "commit": "b07b6408c41cb55122169739e4bdce626660c109",
-        "dest": "flatpak-node/git-packages/mic-recorder-to-mp3-b07b6408c41cb55122169739e4bdce626660c109"
-    },
-    {
         "type": "inline",
         "contents": "001d3f70befaa215ee35b648e0d0a5fa6897e937\t{\"key\": \"make-fetch-happen:request-cache:https://registry.npmjs.org/set-blocking\", \"integrity\": \"sha256-/kDJMCZRWtPbkM7fzZ3W/HWUyCnjFiQLftSPIGzd0tg=\", \"time\": 0, \"size\": 1804, \"metadata\": {\"url\": \"https://registry.npmjs.org/set-blocking\", \"reqHeaders\": {\"accept\": \"application/vnd.npm.install-v1+json; q=1.0, application/json; q=0.8, */*\"}, \"resHeaders\": {}}}",
         "dest-filename": "5054c4dc0b0faa876ce494b47e2a161c3f912dea243a955ffd488db7fa25",
@@ -6129,6 +6130,12 @@
     },
     {
         "type": "inline",
+        "contents": "79822a37935c476ca82feb7f49a09b5926871df8\t{\"key\": \"make-fetch-happen:request-cache:https://registry.npmjs.org/@jmd01/mic-recorder-to-mp3/-/mic-recorder-to-mp3-2.2.3.tgz\", \"integrity\": \"sha512-+TeQ1Pl7R5BpWYU3yQKKU9uPAFzAQ/0YqejZFXXdyWSBpjga5V9vp+M8S7QQ/Y3CzLnPYNIUQpHAUexc6Deacg==\", \"time\": 0, \"size\": 568748, \"metadata\": {\"url\": \"https://registry.npmjs.org/@jmd01/mic-recorder-to-mp3/-/mic-recorder-to-mp3-2.2.3.tgz\", \"reqHeaders\": {}, \"resHeaders\": {}}}",
+        "dest-filename": "6fa7fb97c7a78083b1f4b1be6acf609c5ebed162bba23bdbf6dd30bca718",
+        "dest": "flatpak-node/npm-cache/_cacache/index-v5/83/60"
+    },
+    {
+        "type": "inline",
         "contents": "7a0c08b8193e8a80b5bf45513f74bab9c53d9ad7\t{\"key\": \"make-fetch-happen:request-cache:https://registry.npmjs.org/y18n\", \"integrity\": \"sha256-tJm+IRdndHaxUiczDP4abtwTDVLLtF0i2GHRbHu8NGg=\", \"time\": 0, \"size\": 9210, \"metadata\": {\"url\": \"https://registry.npmjs.org/y18n\", \"reqHeaders\": {\"accept\": \"application/vnd.npm.install-v1+json; q=1.0, application/json; q=0.8, */*\"}, \"resHeaders\": {}}}",
         "dest-filename": "c797a676c91c1866342b9b548736d8f581612b6024cf63b883a4e67da4d6",
         "dest": "flatpak-node/npm-cache/_cacache/index-v5/a4/44"
@@ -7458,6 +7465,12 @@
         "contents": "b452c89484bfba75d7edf480719638d8761ef9b1\t{\"key\": \"make-fetch-happen:request-cache:https://registry.npmjs.org/vuex\", \"integrity\": \"sha256-//y8oxV3/90m3E3+ccsG8DGepVGiODEyMFB3pHsBd1s=\", \"time\": 0, \"size\": 8045, \"metadata\": {\"url\": \"https://registry.npmjs.org/vuex\", \"reqHeaders\": {\"accept\": \"application/vnd.npm.install-v1+json; q=1.0, application/json; q=0.8, */*\"}, \"resHeaders\": {}}}",
         "dest-filename": "45ddb33ebc49cbf1f2301145dc76093149d01312f6e708a48e652f1057b3",
         "dest": "flatpak-node/npm-cache/_cacache/index-v5/ab/af"
+    },
+    {
+        "type": "inline",
+        "contents": "b459dbc795c0daa518a08472db8b01bfcdb5b4cf\t{\"key\": \"make-fetch-happen:request-cache:https://registry.npmjs.org/@jmd01%2fmic-recorder-to-mp3\", \"integrity\": \"sha256-d5v+9SlFv+Vixe0e4plDBmK8QizDYUAnnLph7a9Weeg=\", \"time\": 0, \"size\": 3201, \"metadata\": {\"url\": \"https://registry.npmjs.org/@jmd01%2fmic-recorder-to-mp3\", \"reqHeaders\": {\"accept\": \"application/vnd.npm.install-v1+json; q=1.0, application/json; q=0.8, */*\"}, \"resHeaders\": {}}}",
+        "dest-filename": "20d232b2e625ebd9f1aed453c782ba7b86fedb398c189f82e09d0c76973d",
+        "dest": "flatpak-node/npm-cache/_cacache/index-v5/94/d3"
     },
     {
         "type": "inline",
@@ -10541,6 +10554,13 @@
     },
     {
         "type": "inline",
+        "contents": "eyJ2ZXJzaW9ucyI6IHsiMi4yLjMiOiB7Im5hbWUiOiAiQGptZDAxL21pYy1yZWNvcmRlci10by1tcDMiLCAidmVyc2lvbiI6ICIyLjIuMyIsICJkZXNjcmlwdGlvbiI6ICJSZWNvcmQgeW91ciBtaWNyb3Bob25lIGF1ZGlvIGlucHV0IGFuZCBnZXQgYW4gYXVkaW8vbXAzIG91cHV0IGJ1ZmZlci9ibG9iLiBGb3JrZWQgZHVlIHRvIHRoZSBidW5kbGVkIGRpc3QgKHdoaWNoIGluY2x1ZGVzIGxhbWVqcyBzcmMpIHRocm93aW5nIHRoZSBlcnJvciBcIkxBTUUgdW5kZWZpbmVkXCIgd2hlbiBidW5kbGluZyB3aXRoIGVzYnVpbGQuIiwgIm1haW4iOiAiZGlzdC9pbmRleC5qcyIsICJzY3JpcHRzIjogeyJidWlsZCI6ICJyb2xsdXAgLWMiLCAibWluaWZ5IjogIm1pbmlmeT10cnVlIHJvbGx1cCAtYyIsICJ3YXRjaCI6ICJyb2xsdXAgLWMgLXcifSwgInJlcG9zaXRvcnkiOiB7InR5cGUiOiAiZ2l0IiwgInVybCI6ICJnaXQrc3NoOi8vZ2l0QGdpdGh1Yi5jb20vY2xvc2Vpby9taWMtcmVjb3JkZXItdG8tbXAzLmdpdCJ9LCAiYXV0aG9yIjogeyJuYW1lIjogIkRqYWxtYSBBcmF1am8iLCAiZW1haWwiOiAiZGphbG1hQGNsb3NlLmlvIn0sICJjb250cmlidXRvcnMiOiBbeyJuYW1lIjogIlZpdG9yIEJ1emluYXJvIiwgImVtYWlsIjogInZpdG9yQGNsb3NlLmlvIn1dLCAibGljZW5zZSI6ICJMR1BMLTMuMCIsICJkZXZEZXBlbmRlbmNpZXMiOiB7ImJhYmVsLWNvcmUiOiAiXjYuMjUuMCIsICJiYWJlbC1wbHVnaW4tZXh0ZXJuYWwtaGVscGVycyI6ICJeNi4yMi4wIiwgImJhYmVsLXByZXNldC1lbnYiOiAiXjEuNS4yIiwgInJvbGx1cCI6ICJeMC40My4wIiwgInJvbGx1cC1wbHVnaW4tYmFiZWwiOiAiXjIuNy4xIiwgInJvbGx1cC1wbHVnaW4tY29tbW9uanMiOiAiXjguMC4yIiwgInJvbGx1cC1wbHVnaW4tbm9kZS1yZXNvbHZlIjogIl4zLjAuMCIsICJyb2xsdXAtcGx1Z2luLXVnbGlmeSI6ICJeMi4wLjEiLCAicm9sbHVwLXdhdGNoIjogIl40LjAuMCJ9LCAiYmFiZWwiOiB7InByZXNldHMiOiBbWyJlbnYiLCB7Im1vZHVsZXMiOiBmYWxzZX1dXSwgInBsdWdpbnMiOiBbImV4dGVybmFsLWhlbHBlcnMiXX0sICJkZXBlbmRlbmNpZXMiOiB7ImxhbWVqcyI6ICJeMS4yLjAifSwgInBlZXJEZXBlbmRlbmNpZXMiOiB7IndlYnJ0Yy1hZGFwdGVyIjogIj49NC4xLjEifSwgImdpdEhlYWQiOiAiNDg3ZjU1ZjVlNjE4MjEyZjA5Y2VkZDcxMjlhZTQwZDZkMGNkOGU4MyIsICJidWdzIjogeyJ1cmwiOiAiaHR0cHM6Ly9naXRodWIuY29tL2Nsb3NlaW8vbWljLXJlY29yZGVyLXRvLW1wMy9pc3N1ZXMifSwgImhvbWVwYWdlIjogImh0dHBzOi8vZ2l0aHViLmNvbS9jbG9zZWlvL21pYy1yZWNvcmRlci10by1tcDMjcmVhZG1lIiwgIl9pZCI6ICJAam1kMDEvbWljLXJlY29yZGVyLXRvLW1wM0AyLjIuMyIsICJfbm9kZVZlcnNpb24iOiAiMTYuMTMuMCIsICJfbnBtVmVyc2lvbiI6ICI4LjEuMCIsICJkaXN0IjogeyJpbnRlZ3JpdHkiOiAic2hhNTEyLStUZVExUGw3UjVCcFdZVTN5UUtLVTl1UEFGekFRLzBZcWVqWkZYWGR5V1NCcGpnYTVWOXZwK004UzdRUS9ZM0N6TG5QWU5JVVFwSEFVZXhjNkRlYWNnPT0iLCAic2hhc3VtIjogIjMyYzJjMGM5MmY1NjNmNWQzNzBkMTM3OWRiOWMxOTFiODA1NDA2ZWEiLCAidGFyYmFsbCI6ICJodHRwczovL3JlZ2lzdHJ5Lm5wbWpzLm9yZy9Aam1kMDEvbWljLXJlY29yZGVyLXRvLW1wMy8tL21pYy1yZWNvcmRlci10by1tcDMtMi4yLjMudGd6IiwgImZpbGVDb3VudCI6IDEyLCAidW5wYWNrZWRTaXplIjogMjcxMzMzMSwgIm5wbS1zaWduYXR1cmUiOiAiLS0tLS1CRUdJTiBQR1AgU0lHTkFUVVJFLS0tLS1cclxuVmVyc2lvbjogT3BlblBHUC5qcyB2My4wLjEzXHJcbkNvbW1lbnQ6IGh0dHBzOi8vb3BlbnBncGpzLm9yZ1xyXG5cclxud3NGY0JBRUJDQUFRQlFKaDJNM0hDUkE5VFZzU0FuWldhZ0FBOWMwUC8xa3FiUzRPcTN4M2Y3QmhHYWJyXG5aQmpCSy9qbXRYbENwaUd5WTFNUTFSaDc1ZDQwY1BpcjNyMWZWdWpsSlJlN0F4WmhEeWU0QkdpUGNTUllcbllYVEZjakpMTkVlMm9sK0ZWN0RsMThoL3p2d3J1V3RsV0QrZFZTbFBIWDhVRFhNS3RBV0Z1MHJBeFdXaVxuaTlzakpRWEE4SzVkR0NvN1EvSXB6RHMwVm1SODNqcnJUTUFORTlKNmdzeUJEQmhLWklFN1pYWFlUalVuXG5MWFUzd0NEZ0JFdmhtMm9DcHdrQ0xmaDV5UzlnUzRuQ1FtWitRdUIwTnJCVUtyOVpEODBZNlpaS1J4c1lcbm5OWGxJWU1KNlc2aDV6U2xIcUNUdkRidUZkNlFvL1g0b20vNFRiTFl6NEN5MFJLNHZaWlEzek5uZDJEZVxuV2NRWC9pREthcEJkY0loMkYvZHlPMnE1TFRwNkVSMXhYelV0anMvYnBuVXJpSUNwemlMWVhCT3Q2czlkXG56anNNanF2WVBJTGpPSXBaam9MMlVNTWw5VXlwY3lFMWRhTHZOTTc0K01HY25PMzVwdjNZSm91a1BXS2NcbmtGcGVUVWxBYWd4Q3FOTWlrNVN4U0xjNEc3UHFtWTM2bjZicUt0Q2QwNDIrR2FjTzhPVkptYndDbXRZdFxuZ1QyTzdmYjl0WVNZSmNHQWROWWhWcU5rdnVoWkZmUUJOUUZSQlI2RUdZMWpMTktSa0kvMlZ3aDB1dHE3XG5XRE50d2ZPOVQ5bUJETWJWSVVqTjZsV1Fnc1NpcUFNR05DcFhpTXI1TjF2TVNFd3FiL3JFYWUyMGVmQmhcbjloc1RhZzNVaExoQXNlMGMrZStDSmpRbE5EVUlNZnIzelo0NFNBZlZ3UkpBaXVJYzJNZERhZTByYVdDMVxucmhJRlxyXG49Ky9YZ1xyXG4tLS0tLUVORCBQR1AgU0lHTkFUVVJFLS0tLS1cclxuIiwgInNpZ25hdHVyZXMiOiBbeyJrZXlpZCI6ICJTSEEyNTY6amwzYndzd3U4MFBqam9rQ2doMG8ydzVjMlU0TGhRQUU1N2dqOWN6MWt6QSIsICJzaWciOiAiTUVVQ0lFVklkUTA4QTFMbnpjQlZDOXVpRGRWY2Zxb0YxWTlxcWVSMUdpc0lnOVpaQWlFQTlvNEVwTjBCVis1MDBDejZDZSttM0RoWFVjRmhuRlMvdHpDMFNEZzR1VFU9In1dfSwgIl9ucG1Vc2VyIjogeyJuYW1lIjogImptZDAxIiwgImVtYWlsIjogImpvaG4wMWRhdmlzb25AZ21haWwuY29tIn0sICJkaXJlY3RvcmllcyI6IHt9LCAibWFpbnRhaW5lcnMiOiBbeyJuYW1lIjogImptZDAxIiwgImVtYWlsIjogImpvaG4wMWRhdmlzb25AZ21haWwuY29tIn1dLCAiX25wbU9wZXJhdGlvbmFsSW50ZXJuYWwiOiB7Imhvc3QiOiAiczM6Ly9ucG0tcmVnaXN0cnktcGFja2FnZXMiLCAidG1wIjogInRtcC9taWMtcmVjb3JkZXItdG8tbXAzXzIuMi4zXzE2MzY2Mjc1NjY1NzFfMC40MDcxNzk4NzQ1MTAyNDUzIn0sICJfaGFzU2hyaW5rd3JhcCI6IGZhbHNlfX19",
+        "base64": true,
+        "dest-filename": "fef52945bfe562c5ed1ee299430662bc422cc36140279cba61edaf5679e8",
+        "dest": "flatpak-node/npm-cache/_cacache/content-v2/sha256/77/9b"
+    },
+    {
+        "type": "inline",
         "contents": "eyJ2ZXJzaW9ucyI6IHsiMi4yLjQiOiB7Im5hbWUiOiAiaW52YXJpYW50IiwgInZlcnNpb24iOiAiMi4yLjQiLCAiZGVzY3JpcHRpb24iOiAiaW52YXJpYW50IiwgImtleXdvcmRzIjogWyJ0ZXN0IiwgImludmFyaWFudCJdLCAibGljZW5zZSI6ICJNSVQiLCAiYXV0aG9yIjogeyJuYW1lIjogIkFuZHJlcyBTdWFyZXoiLCAiZW1haWwiOiAiemVydG9zaEBnbWFpbC5jb20ifSwgImZpbGVzIjogWyJicm93c2VyLmpzIiwgImludmFyaWFudC5qcyIsICJpbnZhcmlhbnQuanMuZmxvdyJdLCAicmVwb3NpdG9yeSI6IHsidHlwZSI6ICJnaXQiLCAidXJsIjogImdpdCtodHRwczovL2dpdGh1Yi5jb20vemVydG9zaC9pbnZhcmlhbnQuZ2l0In0sICJzY3JpcHRzIjogeyJ0ZXN0IjogIk5PREVfRU5WPXByb2R1Y3Rpb24gdGFwIHRlc3QvKi5qcyAmJiBOT0RFX0VOVj1kZXZlbG9wbWVudCB0YXAgdGVzdC8qLmpzIn0sICJkZXBlbmRlbmNpZXMiOiB7Imxvb3NlLWVudmlmeSI6ICJeMS4wLjAifSwgImRldkRlcGVuZGVuY2llcyI6IHsiYnJvd3NlcmlmeSI6ICJeMTEuMC4xIiwgImZsb3ctYmluIjogIl4wLjY3LjEiLCAidGFwIjogIl4xLjQuMCJ9LCAibWFpbiI6ICJpbnZhcmlhbnQuanMiLCAiYnJvd3NlciI6ICJicm93c2VyLmpzIiwgImJyb3dzZXJpZnkiOiB7InRyYW5zZm9ybSI6IFsibG9vc2UtZW52aWZ5Il19LCAiZ2l0SGVhZCI6ICJjZTk1YTliYWRlZWUxYzk3ZGFmZjFiY2EwZDFmNmNlYzVkZGE0ZmU4IiwgImJ1Z3MiOiB7InVybCI6ICJodHRwczovL2dpdGh1Yi5jb20vemVydG9zaC9pbnZhcmlhbnQvaXNzdWVzIn0sICJob21lcGFnZSI6ICJodHRwczovL2dpdGh1Yi5jb20vemVydG9zaC9pbnZhcmlhbnQjcmVhZG1lIiwgIl9pZCI6ICJpbnZhcmlhbnRAMi4yLjQiLCAiX25wbVZlcnNpb24iOiAiNS42LjAiLCAiX25vZGVWZXJzaW9uIjogIjkuNS4wIiwgIl9ucG1Vc2VyIjogeyJuYW1lIjogInplcnRvc2giLCAiZW1haWwiOiAiemVydG9zaEBnbWFpbC5jb20ifSwgImRpc3QiOiB7ImludGVncml0eSI6ICJzaGE1MTItcGhKZlFWQnVhSk01cmFPcEpqU2ZraUQ2QnBiQ0U0TnMvL0xhWGw2d0dZdFVCWTgzbldTNlJmOXRYbTJlOFZhSzYwSkVqWWxkYlBpZi9BMkIxQzJnTkE9PSIsICJzaGFzdW0iOiAiNjEwZjNjOTJjOTM1OWNlMWRiNjE2ZTUzODAwOGQyM2ZmMzUxNThlNiIsICJ0YXJiYWxsIjogImh0dHBzOi8vcmVnaXN0cnkubnBtanMub3JnL2ludmFyaWFudC8tL2ludmFyaWFudC0yLjIuNC50Z3oiLCAiZmlsZUNvdW50IjogNywgInVucGFja2VkU2l6ZSI6IDc2MzksICJzaWduYXR1cmVzIjogW3sia2V5aWQiOiAiU0hBMjU2OmpsM2J3c3d1ODBQampva0NnaDBvMnc1YzJVNExoUUFFNTdnajljejFrekEiLCAic2lnIjogIk1FUUNJSEtQL2FySmZPa1hhMWVVYjlKdUNkRFBCQU0vM3l3NjhpZDBTZ0kwQnd4MkFpQmJZQjZ4a3pVMDBFRXBFaVhZV1BSdTlLWXV1MGRzZkxCRkp4NGxrdHRNTUE9PSJ9XX0sICJtYWludGFpbmVycyI6IFt7Im5hbWUiOiAiY3BvamVyIiwgImVtYWlsIjogImNocmlzdG9waC5wb2plckBnbWFpbC5jb20ifSwgeyJuYW1lIjogInplcnRvc2giLCAiZW1haWwiOiAiemVydG9zaEBnbWFpbC5jb20ifV0sICJkaXJlY3RvcmllcyI6IHt9LCAiX25wbU9wZXJhdGlvbmFsSW50ZXJuYWwiOiB7Imhvc3QiOiAiczM6Ly9ucG0tcmVnaXN0cnktcGFja2FnZXMiLCAidG1wIjogInRtcC9pbnZhcmlhbnRfMi4yLjRfMTUyMDk2NjE3MDE1OF8wLjkwMDQ0MzgyNjgzMTQyNzQifSwgIl9oYXNTaHJpbmt3cmFwIjogZmFsc2V9fX0=",
         "base64": true,
         "dest-filename": "ed44b5e7bea86d332187c526317c527883c27a311d88c0c6f152a84fc81e",
@@ -12267,21 +12287,16 @@
     },
     {
         "type": "script",
-        "commands": [
-            "$FLATPAK_BUILDER_BUILDDIR/flatpak-node/patch.sh"
-        ],
-        "dest-filename": "patch-all.sh",
+        "commands": [],
+        "dest-filename": "patch.sh",
         "dest": "flatpak-node"
     },
     {
         "type": "script",
         "commands": [
-            "jq --arg buildroot \"$FLATPAK_BUILDER_BUILDDIR\" --argjson data '{\"https://git@github.com/NikolaBalaban/mic-recorder-to-mp3.git\": \"flatpak-node/git-packages/mic-recorder-to-mp3-b07b6408c41cb55122169739e4bdce626660c109#b07b6408c41cb55122169739e4bdce626660c109\"}' 'walk(    if type == \"object\"    then        to_entries | map(            if (.value | type == \"string\") and $data[.value]            then .value = \"git+file:\\($buildroot)/\\($data[.value])\"            else .            end        ) | from_entries    else .    end)' $FLATPAK_BUILDER_BUILDDIR/package.json > $FLATPAK_BUILDER_BUILDDIR/package.json.new",
-            "mv $FLATPAK_BUILDER_BUILDDIR/package.json{.new,}",
-            "jq --arg buildroot \"$FLATPAK_BUILDER_BUILDDIR\" --argjson data '{\"git+https://git@github.com/NikolaBalaban/mic-recorder-to-mp3.git#b07b6408c41cb55122169739e4bdce626660c109\": \"flatpak-node/git-packages/mic-recorder-to-mp3-b07b6408c41cb55122169739e4bdce626660c109#b07b6408c41cb55122169739e4bdce626660c109\", \"https://git@github.com/NikolaBalaban/mic-recorder-to-mp3.git#b07b6408c41cb55122169739e4bdce626660c109\": \"flatpak-node/git-packages/mic-recorder-to-mp3-b07b6408c41cb55122169739e4bdce626660c109#b07b6408c41cb55122169739e4bdce626660c109\"}' 'walk(    if type == \"object\" and (.version | type == \"string\") and $data[.version]    then        .version = \"git+file:\\($buildroot)/\\($data[.version])\"    else .    end)' $FLATPAK_BUILDER_BUILDDIR/package-lock.json > $FLATPAK_BUILDER_BUILDDIR/package-lock.json.new",
-            "mv $FLATPAK_BUILDER_BUILDDIR/package-lock.json{.new,}"
+            "$FLATPAK_BUILDER_BUILDDIR/flatpak-node/patch.sh"
         ],
-        "dest-filename": "patch.sh",
+        "dest-filename": "patch-all.sh",
         "dest": "flatpak-node"
     },
     {

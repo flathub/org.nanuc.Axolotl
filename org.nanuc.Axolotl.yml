@@ -164,8 +164,8 @@ modules:
       - generated-axolotl-sources.json
       - type: git
         url: https://github.com/nanu-c/axolotl
-        tag: main #TODO use a tagged version, probably 1.5.1
-        commit: 467c3ba45d3d9e44b86b1230714cb91dd8488cd4
+        tag: replace-git-mic-recorder-to-mp3-dependency #TODO use a tagged version, probably 1.5.1
+        commit: 19601104b822baf90055d52513c8314bd5b020ed
         dest: src/github.com/nanu-c/axolotl
 
   - name: metadata
