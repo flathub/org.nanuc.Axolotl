@@ -104,12 +104,12 @@ modules:
       env:
         BUNDLER_CACHE: /app/lib/astibundler/cache
     build-commands:
-      - install -Dm 644 astilectron-0.51.0.zip ${BUNDLER_CACHE}/astilectron-0.51.0.zip
+      - install -Dm 644 astilectron-0.55.0.zip ${BUNDLER_CACHE}/astilectron-0.55.0.zip
     sources:
       - type: file
-        url: https://github.com/asticode/astilectron/archive/v0.51.0.zip
-        sha256: 8217f4191c506a0fd5624aad324baa3135c74b07ef9dea356d40d70c401f26fc
-        dest-filename: astilectron-0.51.0.zip
+        url: https://github.com/asticode/astilectron/archive/v0.55.0.zip
+        sha256: e76163cf7ac5b29d50de2829c67090a01a30e7f8865fc0a2709f2bd8654c3dc0
+        dest-filename: astilectron-0.55.0.zip
 
   - name: astilectron-bundler-electron-amd64
     buildsystem: simple
@@ -119,12 +119,12 @@ modules:
       env:
         BUNDLER_CACHE: /app/lib/astibundler/cache
     build-commands:
-      - install -Dm 644 electron-linux-amd64-17.0.0.zip ${BUNDLER_CACHE}/electron-linux-amd64-17.0.0.zip
+      - install -Dm 644 electron-linux-amd64-18.0.1.zip ${BUNDLER_CACHE}/electron-linux-amd64-18.0.1.zip
     sources:
       - type: file
-        url: https://github.com/electron/electron/releases/download/v17.0.0/electron-v17.0.0-linux-x64.zip
-        sha256: dc74e28719a79f05dd741cda8c22c2bb164dec178c6d560af085910b37cf000b
-        dest-filename: electron-linux-amd64-17.0.0.zip
+        url: https://github.com/electron/electron/releases/download/v18.0.1/electron-v18.0.1-linux-x64.zip
+        sha256: 35403fdf085594e91870032f43eb9b4261c1eaebb6677383ce69273ee5eafd9b
+        dest-filename: electron-linux-amd64-18.0.1.zip
 
   - name: astilectron-bundler-electron-arm64
     buildsystem: simple
@@ -134,12 +134,12 @@ modules:
       env:
         BUNDLER_CACHE: /app/lib/astibundler/cache
     build-commands:
-      - install -Dm 644 electron-linux-arm64-17.0.0.zip ${BUNDLER_CACHE}/electron-linux-arm64-17.0.0.zip
+      - install -Dm 644 electron-linux-arm64-18.0.1.zip ${BUNDLER_CACHE}/electron-linux-arm64-18.0.1.zip
     sources:
       - type: file
-        url: https://github.com/electron/electron/releases/download/v17.0.0/electron-v17.0.0-linux-arm64.zip
-        sha256: e7bf2ec09b8a7018ba417fc670a15594fb8f3e930626485f2423e9a89e2dcbd0
-        dest-filename: electron-linux-arm64-17.0.0.zip
+        url: https://github.com/electron/electron/releases/download/v18.0.1/electron-v18.0.1-linux-arm64.zip
+        sha256: 5849f037278eb5df120d213a524039f1bfd3b16cffa814f7ff05a8aad4256b53
+        dest-filename: electron-linux-arm64-18.0.1.zip
 
   - name: axolotl-electron-bundle
     buildsystem: simple
