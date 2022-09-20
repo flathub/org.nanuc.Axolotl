@@ -19,11 +19,6 @@ Before executing the below scripts, make sure to check out the relevant git tag 
 For NPM, [flatpak-node-generator](https://github.com/flatpak/flatpak-builder-tools/blob/master/node/README.md) is
 provided.
 
-There are some problematic npm dependencies which at the moment causes the node-generator to fail.
-
-With a single line adjustment, see [node-generator.patch](./node-generator.patch), this problem can be fixed. 
-see [this comment](https://github.com/flatpak/flatpak-builder-tools/issues/251#issuecomment-998024781).
-
 ```shell
 make generate-axolotl-web-sources
 ```
