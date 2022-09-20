@@ -64,8 +64,8 @@ modules:
       - generated-crayfish-sources.json
       - type: git
         url: https://github.com/nanu-c/axolotl
-        tag: v1.5.0
-        commit: 2ef7605c0bf5b69ed79e10a25c1832c9a31cee7c
+        tag: v1.5.1
+        commit: 4482b11b23ac7da299cd9c26093cf3511ab7591c
         dest: src/github.com/nanu-c/axolotl
 
   - name: zkgroup
@@ -104,12 +104,12 @@ modules:
       env:
         BUNDLER_CACHE: /app/lib/astibundler/cache
     build-commands:
-      - install -Dm 644 astilectron-0.55.0.zip ${BUNDLER_CACHE}/astilectron-0.55.0.zip
+      - install -Dm 644 astilectron-0.56.0.zip ${BUNDLER_CACHE}/astilectron-0.56.0.zip
     sources:
       - type: file
-        url: https://github.com/asticode/astilectron/archive/v0.55.0.zip
-        sha256: e76163cf7ac5b29d50de2829c67090a01a30e7f8865fc0a2709f2bd8654c3dc0
-        dest-filename: astilectron-0.55.0.zip
+        url: https://github.com/asticode/astilectron/archive/v0.56.0.zip
+        sha256: 2725492843edaef0530543c041c5c7d9e43d4163f5c192fc8da11ce89fcaa0f5
+        dest-filename: astilectron-0.56.0.zip
 
   - name: astilectron-bundler-electron-amd64
     buildsystem: simple
@@ -164,8 +164,8 @@ modules:
       - generated-axolotl-sources.json
       - type: git
         url: https://github.com/nanu-c/axolotl
-        tag: replace-git-mic-recorder-to-mp3-dependency #TODO use a tagged version, probably 1.5.1
-        commit: 19601104b822baf90055d52513c8314bd5b020ed
+        tag: v1.5.1
+        commit: 4482b11b23ac7da299cd9c26093cf3511ab7591c
         dest: src/github.com/nanu-c/axolotl
 
   - name: metadata
@@ -178,8 +178,8 @@ modules:
     sources:
       - type: git
         url: https://github.com/nanu-c/axolotl
-        tag: v1.5.0
-        commit: 2ef7605c0bf5b69ed79e10a25c1832c9a31cee7c
+        tag: v1.5.1
+        commit: 4482b11b23ac7da299cd9c26093cf3511ab7591c
         dest: src/github.com/nanu-c/axolotl
 
   - name: run
