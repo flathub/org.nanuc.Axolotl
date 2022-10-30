@@ -115,7 +115,7 @@ generate-axolotl-sources:
 		--verbose \
 		--keep-build-dirs \
 		--force-clean \
-        --disable-cache
+		--disable-cache
 	$(PYTHON) flatpak-builder-tools/go-get/flatpak-go-get-generator.py .flatpak-builder/build/axolotl
 	mv axolotl-sources.json generated-axolotl-sources.json
 
