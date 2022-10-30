@@ -95,7 +95,7 @@ update-submodules:
 
 .PHONY: install-flatpak-node-generator
 install-flatpak-node-generator:
-	pipx install ./flatpak-builder-tools/node
+	pipx install --force ./flatpak-builder-tools/node
 
 .PHONY: generate-astilectron-bundler-sources
 generate-astilectron-bundler-sources:
@@ -103,7 +103,8 @@ generate-astilectron-bundler-sources:
 	$(FLATPAK_BUILDER) build astilectron-bundler-download-manifest.yml \
 		--verbose \
 		--keep-build-dirs \
-		--force-clean
+		--force-clean \
+		--disable-cache
 	$(PYTHON) flatpak-builder-tools/go-get/flatpak-go-get-generator.py .flatpak-builder/build/astilectron-bundler
 	mv astilectron-bundler-sources.json generated-astilectron-bundler-sources.json
 
@@ -113,7 +114,8 @@ generate-axolotl-sources:
 	$(FLATPAK_BUILDER) build axolotl-download-manifest.yml \
 		--verbose \
 		--keep-build-dirs \
-		--force-clean
+		--force-clean \
+        --disable-cache
 	$(PYTHON) flatpak-builder-tools/go-get/flatpak-go-get-generator.py .flatpak-builder/build/axolotl
 	mv axolotl-sources.json generated-axolotl-sources.json
 

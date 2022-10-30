@@ -2,7 +2,7 @@
   {
     "type": "git",
     "url": "https://github.com/gen2brain/beeep",
-    "commit": "d7852edf42fcad580965acb60e07a3b468409d4a",
+    "commit": "5a9ec94374f60b2b12acc4b615be802c8563a157",
     "dest": "src/github.com/gen2brain/beeep"
   },
   {
@@ -32,7 +32,7 @@
   {
     "type": "git",
     "url": "https://github.com/signal-golang/textsecure",
-    "commit": "ea71697cf0e5b48991e830b3f6d7a849fc48f364",
+    "commit": "153e6c079fca43097b8b4d5e28cb5ed400bd0df8",
     "dest": "src/github.com/signal-golang/textsecure"
   },
   {
@@ -56,8 +56,14 @@
   {
     "type": "git",
     "url": "https://github.com/gorilla/websocket",
-    "commit": "bc7ce893c36595e095de550a211feb5993e6ef92",
+    "commit": "af47554f343b4675b30172ac301638d350db34a5",
     "dest": "src/github.com/gorilla/websocket"
+  },
+  {
+    "type": "git",
+    "url": "https://github.com/Blackoverflow/gcmsiv",
+    "commit": "20af2af977ff5ea86822779c61227b2810248e3d",
+    "dest": "src/github.com/Blackoverflow/gcmsiv"
   },
   {
     "type": "git",
@@ -68,7 +74,7 @@
   {
     "type": "git",
     "url": "https://github.com/nanu-c/axolotl",
-    "commit": "b571e05cc86547702b4ac8756b0d76f1d25e0535",
+    "commit": "e521ab32b5bf315866a17f6844e5339abbc41e79",
     "dest": "src/github.com/nanu-c/axolotl"
   },
   {
@@ -80,13 +86,13 @@
   {
     "type": "git",
     "url": "https://github.com/godbus/dbus",
-    "commit": "a37d5dd17d28f413873a84feb09b247da848271c",
+    "commit": "4b691ce883d536a867587e2fcfec1245ebddecd0",
     "dest": "src/github.com/godbus/dbus"
   },
   {
     "type": "git",
     "url": "https://github.com/dustin/go-humanize",
-    "commit": "d5090ed65664713c1e0f7ad94613c85b26174690",
+    "commit": "bd075d4544f088461bb2f008c051897fdfae9ff2",
     "dest": "src/github.com/dustin/go-humanize"
   },
   {
@@ -128,13 +134,13 @@
   {
     "type": "git",
     "url": "https://github.com/asticode/go-astikit",
-    "commit": "4ba43aee86681c99fd72a8ea6758778b554dceaf",
+    "commit": "8240b8fa93c8b745bd787c16b7fba276468fe52b",
     "dest": "src/github.com/asticode/go-astikit"
   },
   {
     "type": "git",
     "url": "https://github.com/asticode/go-astilectron",
-    "commit": "3aea3f6f31a858aecdb9e05aa9e6ac7134fd1d5e",
+    "commit": "26d5ce8e32757b60d8e2937303673f7a8a913c75",
     "dest": "src/github.com/asticode/go-astilectron"
   },
   {
@@ -146,7 +152,7 @@
   {
     "type": "git",
     "url": "https://github.com/sirupsen/logrus",
-    "commit": "56c843c73da6b3f6c833cc7baaae8b4c0d2692dd",
+    "commit": "f8bf7650dccb756cea26edaf9217aab85500fe07",
     "dest": "src/github.com/sirupsen/logrus"
   },
   {
@@ -182,31 +188,31 @@
   {
     "type": "git",
     "url": "https://go.googlesource.com/sys",
-    "commit": "4f61da869c0cac4042c389774ce3a1627c48b555",
+    "commit": "572649812736c4acbab67d55b036e522e41105f1",
     "dest": "src/golang.org/x/sys"
   },
   {
     "type": "git",
     "url": "https://go.googlesource.com/net",
-    "commit": "9d032be2e588a63acb0b5094f7890543ae97725b",
+    "commit": "c63010009c802314a29324ce49987897f9838e29",
     "dest": "src/golang.org/x/net"
   },
   {
     "type": "git",
     "url": "https://go.googlesource.com/crypto",
-    "commit": "793ad666bf5ec61392092b27061be9618e4e219b",
+    "commit": "a3485e174077e5296d3d4a43ca31d2d21b40be2c",
     "dest": "src/golang.org/x/crypto"
   },
   {
     "type": "git",
     "url": "https://go.googlesource.com/text",
-    "commit": "b4bca84b03619dba00657375259024a7f8ae6712",
+    "commit": "1bdb400fb39a45cc788ffe7e5d7a2a9719afc7e9",
     "dest": "src/golang.org/x/text"
   },
   {
     "type": "git",
     "url": "https://go.googlesource.com/protobuf",
-    "commit": "fc44d00d5a99973a6deb0863d6aaa7446c016066",
+    "commit": "7a48e2b66218ba306ed801e42126b374aefce255",
     "dest": "src/google.golang.org/protobuf"
   },
   {
