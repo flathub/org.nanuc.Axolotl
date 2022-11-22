@@ -65,6 +65,9 @@ modules:
         tag: v1.6.0
         commit: e521ab32b5bf315866a17f6844e5339abbc41e79
         dest: src/github.com/nanu-c/axolotl
+        x-checker-data:
+          type: git
+          tag-pattern: "^v([\\d.]+)$"
 
   - name: zkgroup
     buildsystem: simple
@@ -78,6 +81,9 @@ modules:
         commit: e00e74649ddc88eff10ba8e4c40dafdb06dcf494
         dest: src/github.com/nanu-c/zkgroup
         disable-submodules: true
+        x-checker-data:
+          type: git
+          tag-pattern: "^v([\\d.]+)$"
 
   - name: astilectron-bundler
     buildsystem: simple
@@ -96,6 +102,9 @@ modules:
         tag: v0.7.12
         commit: 9ca0b71fdf5533e4aa17f7587fb747d3874a7315
         dest: src/github.com/asticode/go-astilectron-bundler
+        x-checker-data:
+          type: git
+          tag-pattern: "^v([\\d.]+)$"
 
   - name: astilectron-bundler-astilectron
     buildsystem: simple
@@ -166,6 +175,9 @@ modules:
         tag: v1.6.0
         commit: e521ab32b5bf315866a17f6844e5339abbc41e79
         dest: src/github.com/nanu-c/axolotl
+        x-checker-data:
+          type: git
+          tag-pattern: "^v([\\d.]+)$"
 
   - name: metadata
     buildsystem: simple
@@ -180,6 +192,9 @@ modules:
         tag: v1.6.0
         commit: e521ab32b5bf315866a17f6844e5339abbc41e79
         dest: src/github.com/nanu-c/axolotl
+        x-checker-data:
+          type: git
+          tag-pattern: "^v([\\d.]+)$"
 
   - name: run
     buildsystem: simple
