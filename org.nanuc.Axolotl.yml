@@ -1,23 +1,20 @@
 app-id: org.nanuc.Axolotl
 runtime: org.freedesktop.Platform
-runtime-version: '21.08'
+runtime-version: '22.08'
 sdk: org.freedesktop.Sdk
 sdk-extensions:
   - org.freedesktop.Sdk.Extension.golang
-  - org.freedesktop.Sdk.Extension.node16
+  - org.freedesktop.Sdk.Extension.node18
   - org.freedesktop.Sdk.Extension.rust-stable
 command: run.sh
 base: org.electronjs.Electron2.BaseApp
-base-version: '21.08'
+base-version: '22.08'
 separate-locales: false
 build-options:
-  append-path: "/usr/lib/sdk/rust-stable/bin:/usr/lib/sdk/golang/bin:/usr/lib/sdk/node16/bin"
+  append-path: "/usr/lib/sdk/rust-stable/bin:/usr/lib/sdk/golang/bin:/usr/lib/sdk/node18/bin"
   env:
     CARGO_NET_OFFLINE: true
-    npm_config_nodedir: /usr/lib/sdk/node16
-    GIT_CONFIG_COUNT: 1
-    GIT_CONFIG_KEY_0: advice.detachedHead
-    GIT_CONFIG_VALUE_0: false
+    npm_config_nodedir: /usr/lib/sdk/node18
 cleanup:
   - /app/bin/astilectron-bundler
 finish-args:
