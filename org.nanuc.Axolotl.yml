@@ -11,7 +11,7 @@ base: org.electronjs.Electron2.BaseApp
 base-version: '22.08'
 separate-locales: false
 build-options:
-  append-path: "/usr/lib/sdk/rust-stable/bin:/usr/lib/sdk/golang/bin:/usr/lib/sdk/node18/bin"
+  append-path: /usr/lib/sdk/rust-stable/bin:/usr/lib/sdk/golang/bin:/usr/lib/sdk/node18/bin
   env:
     CARGO_NET_OFFLINE: true
     npm_config_nodedir: /usr/lib/sdk/node18
@@ -59,12 +59,12 @@ modules:
       - generated-crayfish-sources.json
       - type: git
         url: https://github.com/nanu-c/axolotl
-        tag: v1.6.0
-        commit: e521ab32b5bf315866a17f6844e5339abbc41e79
+        tag: v2.0.2
+        commit: bcae9a7bf39b9c4acf70e6e6f36edd9ed3080b7c
         dest: src/github.com/nanu-c/axolotl
         x-checker-data:
           type: git
-          tag-pattern: "^v([\\d.]+)$"
+          tag-pattern: ^v([\d.]+)$
 
   - name: zkgroup
     buildsystem: simple
@@ -80,7 +80,7 @@ modules:
         disable-submodules: true
         x-checker-data:
           type: git
-          tag-pattern: "^v([\\d.]+)$"
+          tag-pattern: ^v([\d.]+)$
 
   - name: astilectron-bundler
     buildsystem: simple
@@ -101,7 +101,7 @@ modules:
         dest: src/github.com/asticode/go-astilectron-bundler
         x-checker-data:
           type: git
-          tag-pattern: "^v([\\d.]+)$"
+          tag-pattern: ^v([\d.]+)$
 
   - name: astilectron-bundler-astilectron
     buildsystem: simple
@@ -150,7 +150,7 @@ modules:
     buildsystem: simple
     build-options:
       env:
-        npm_config_offline: "true"
+        npm_config_offline: 'true'
         npm_config_cache: /run/build/axolotl-electron-bundle/flatpak-node/npm-cache
         GOBIN: /app/bin
         GO111MODULE: off
@@ -160,9 +160,10 @@ modules:
       - make build-dependencies-axolotl-web
       - make build-axolotl-web
       # Specify bundler working directory (where Electron and Astilectron is)
-      - echo "$(jq '. + { working_directory_path:"/app/lib/astibundler" }' bundler.json)" > bundler.json
-      - make build-axolotl-electron-bundle &
-        while [ -e /proc/$! ]; do echo -n "."; sleep 100; done
+      - echo "$(jq '. + { working_directory_path:"/app/lib/astibundler" }' bundler.json)"
+        > bundler.json
+      - make build-axolotl-electron-bundle & while [ -e /proc/$! ]; do echo -n ".";
+        sleep 100; done
       - make install-axolotl-electron-bundle DESTDIR=${FLATPAK_DEST} INSTALL_PREFIX=/bin
     sources:
       - generated-axolotl-web-sources.0.json
@@ -174,7 +175,7 @@ modules:
         dest: src/github.com/nanu-c/axolotl
         x-checker-data:
           type: git
-          tag-pattern: "^v([\\d.]+)$"
+          tag-pattern: ^v([\d.]+)$
 
   - name: metadata
     buildsystem: simple
@@ -191,16 +192,16 @@ modules:
         dest: src/github.com/nanu-c/axolotl
         x-checker-data:
           type: git
-          tag-pattern: "^v([\\d.]+)$"
+          tag-pattern: ^v([\d.]+)$
 
   - name: run
     buildsystem: simple
     build-commands:
       - install -Dm 755 run.sh ${FLATPAK_DEST}/bin/run.sh
     sources:
-    - type: script
-      dest-filename: run.sh
-      commands:
-        - export DISPLAY=:0
-        - export WAYLAND_DISPLAY=wayland-0
-        - zypak-wrapper /app/bin/axolotl-electron-bundle "$@"
+      - type: script
+        dest-filename: run.sh
+        commands:
+          - export DISPLAY=:0
+          - export WAYLAND_DISPLAY=wayland-0
+          - zypak-wrapper /app/bin/axolotl-electron-bundle "$@"
