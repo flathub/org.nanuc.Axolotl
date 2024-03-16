@@ -1,29 +1,19 @@
 app-id: org.nanuc.Axolotl
-runtime: org.freedesktop.Platform
-runtime-version: '22.08'
-sdk: org.freedesktop.Sdk
+runtime: org.gnome.Platform
+runtime-version: "45"
+sdk: org.gnome.Sdk
 sdk-extensions:
-  - org.freedesktop.Sdk.Extension.golang
   - org.freedesktop.Sdk.Extension.node18
   - org.freedesktop.Sdk.Extension.rust-stable
-command: run.sh
-base: org.electronjs.Electron2.BaseApp
-base-version: '22.08'
-separate-locales: false
-build-options:
-  append-path: "/usr/lib/sdk/rust-stable/bin:/usr/lib/sdk/golang/bin:/usr/lib/sdk/node18/bin"
-  env:
-    CARGO_NET_OFFLINE: true
-    npm_config_nodedir: /usr/lib/sdk/node18
-cleanup:
-  - /app/bin/astilectron-bundler
+command: axolotl
 finish-args:
   # See https://docs.flatpak.org/en/latest/sandbox-permissions-reference.html
   # Write access for the user download folder (to save media)
   - --filesystem=xdg-download:rw
+  # TODO Can we use the Flatpak directories like XDG_CONFIG_DIR instead?
   # File access for configs (read/write access, and create the directory if it doesn’t exist)
-  - --filesystem=~/.local/share/textsecure.nanuc:create
-  - --filesystem=~/.config/textsecure.nanuc:create
+  - --filesystem=~/.local/share/axolotl.nanuc:create
+  - --filesystem=~/.config/axolotl.nanuc:create
   # Read access for home folder (to upload media)
   - --filesystem=home:ro
   # Network access - to receive and send messages
@@ -39,168 +29,73 @@ finish-args:
   - --device=dri
   # To send and receive notifications
   - --talk-name=org.freedesktop.Notifications
-  # Run with bundled Electron
-  - --env=AXOLOTL_ELECTRON_BUNDLED="true"
-  # Specify axolotl-web location
-  - --env=AXOLOTL_WEB_DIR=/app/lib/astibundler/bind/axolotl-web/dist
 
 modules:
-  - name: crayfish
+  - name: axolotl
     buildsystem: simple
     build-options:
+      # Add the node bin directory.
+      append-path: /usr/lib/sdk/node18/bin:/usr/lib/sdk/rust-stable/bin
       env:
-        CARGO_HOME: /run/build/crayfish/cargo
-    subdir: src/github.com/nanu-c/axolotl
+        # Cargo config
+        CARGO_HOME: /run/build/axolotl/cargo
+        # Cargo offline mode
+        CARGO_NET_OFFLINE: "true"
     build-commands:
-      - cargo fetch --manifest-path crayfish/Cargo.toml
-      - make build-crayfish
-      - make install-crayfish DESTDIR=${FLATPAK_DEST} INSTALL_PREFIX=/bin
-    sources:
-      - generated-crayfish-sources.json
-      - type: git
-        url: https://github.com/nanu-c/axolotl
-        tag: v1.6.0
-        commit: e521ab32b5bf315866a17f6844e5339abbc41e79
-        dest: src/github.com/nanu-c/axolotl
-        x-checker-data:
-          type: git
-          tag-pattern: "^v([\\d.]+)$"
-
-  - name: zkgroup
-    buildsystem: simple
-    subdir: src/github.com/nanu-c/zkgroup/lib
-    build-commands:
-      - install -Dm 755 libzkgroup_linux_${FLATPAK_ARCH}.so ${FLATPAK_DEST}/lib/libzkgroup_linux_${FLATPAK_ARCH}.so
-    sources:
-      - type: git
-        url: https://github.com/nanu-c/zkgroup
-        tag: v0.9.0
-        commit: e00e74649ddc88eff10ba8e4c40dafdb06dcf494
-        dest: src/github.com/nanu-c/zkgroup
-        disable-submodules: true
-        x-checker-data:
-          type: git
-          tag-pattern: "^v([\\d.]+)$"
-
-  - name: astilectron-bundler
-    buildsystem: simple
-    build-options:
-      env:
-        GOBIN: /app/bin
-        GO111MODULE: off
-        GOPATH: /run/build/astilectron-bundler
-    subdir: src/github.com/asticode/go-astilectron-bundler
-    build-commands:
-      - go install -v github.com/asticode/go-astilectron-bundler/...
-    sources:
-      - generated-astilectron-bundler-sources.json
-      - type: git
-        url: https://github.com/asticode/go-astilectron-bundler
-        tag: v0.7.12
-        commit: 9ca0b71fdf5533e4aa17f7587fb747d3874a7315
-        dest: src/github.com/asticode/go-astilectron-bundler
-        x-checker-data:
-          type: git
-          tag-pattern: "^v([\\d.]+)$"
-
-  - name: astilectron-bundler-astilectron
-    buildsystem: simple
-    build-options:
-      env:
-        BUNDLER_CACHE: /app/lib/astibundler/cache
-    build-commands:
-      - install -Dm 644 astilectron-0.56.0.zip ${BUNDLER_CACHE}/astilectron-0.56.0.zip
-    sources:
-      - type: file
-        url: https://github.com/asticode/astilectron/archive/v0.56.0.zip
-        sha256: 2725492843edaef0530543c041c5c7d9e43d4163f5c192fc8da11ce89fcaa0f5
-        dest-filename: astilectron-0.56.0.zip
-
-  - name: astilectron-bundler-electron-amd64
-    buildsystem: simple
-    only-arches:
-      - x86_64
-    build-options:
-      env:
-        BUNDLER_CACHE: /app/lib/astibundler/cache
-    build-commands:
-      - install -Dm 644 electron-linux-amd64-20.2.0.zip ${BUNDLER_CACHE}/electron-linux-amd64-20.2.0.zip
-    sources:
-      - type: file
-        url: https://github.com/electron/electron/releases/download/v20.2.0/electron-v20.2.0-linux-x64.zip
-        sha256: c0e3522de34819b838f4a35ddf30c6283c61be1bb8dff02089cda3f641938aad
-        dest-filename: electron-linux-amd64-20.2.0.zip
-
-  - name: astilectron-bundler-electron-arm64
-    buildsystem: simple
-    only-arches:
-      - aarch64
-    build-options:
-      env:
-        BUNDLER_CACHE: /app/lib/astibundler/cache
-    build-commands:
-      - install -Dm 644 electron-linux-arm64-20.2.0.zip ${BUNDLER_CACHE}/electron-linux-arm64-20.2.0.zip
-    sources:
-      - type: file
-        url: https://github.com/electron/electron/releases/download/v20.2.0/electron-v20.2.0-linux-arm64.zip
-        sha256: 1d2dd05f060786eae5ce687794aa071df8a5f5733b7b2efa1481de8db75d7738
-        dest-filename: electron-linux-arm64-20.2.0.zip
-
-  - name: axolotl-electron-bundle
-    buildsystem: simple
-    build-options:
-      env:
-        npm_config_offline: "true"
-        npm_config_cache: /run/build/axolotl-electron-bundle/flatpak-node/npm-cache
-        GOBIN: /app/bin
-        GO111MODULE: off
-        GOPATH: /run/build/axolotl-electron-bundle
-    subdir: src/github.com/nanu-c/axolotl
-    build-commands:
-      - make build-dependencies-axolotl-web
       - make build-axolotl-web
-      # Specify bundler working directory (where Electron and Astilectron is)
-      - echo "$(jq '. + { working_directory_path:"/app/lib/astibundler" }' bundler.json)" > bundler.json
-      - make build-axolotl-electron-bundle &
-        while [ -e /proc/$! ]; do echo -n "."; sleep 100; done
-      - make install-axolotl-electron-bundle DESTDIR=${FLATPAK_DEST} INSTALL_PREFIX=/bin
-    sources:
-      - generated-axolotl-web-sources.0.json
-      - generated-axolotl-sources.json
-      - type: git
-        url: https://github.com/nanu-c/axolotl
-        tag: v1.6.0
-        commit: e521ab32b5bf315866a17f6844e5339abbc41e79
-        dest: src/github.com/nanu-c/axolotl
-        x-checker-data:
-          type: git
-          tag-pattern: "^v([\\d.]+)$"
-
-  - name: metadata
-    buildsystem: simple
-    subdir: src/github.com/nanu-c/axolotl
-    build-commands:
-      - install -Dm 644 flatpak/org.nanuc.Axolotl.png ${FLATPAK_DEST}/share/icons/hicolor/128x128/apps/${FLATPAK_ID}.png
-      - install -Dm 644 flatpak/org.nanuc.Axolotl.appdata.xml ${FLATPAK_DEST}/share/metainfo/${FLATPAK_ID}.metainfo.xml
-      - install -Dm 644 flatpak/web/org.nanuc.Axolotl.desktop ${FLATPAK_DEST}/share/applications/${FLATPAK_ID}.desktop
+      - make APP_ID=${FLATPAK_ID} DESTDIR=${FLATPAK_DEST} PREFIX="" install
     sources:
       - type: git
-        url: https://github.com/nanu-c/axolotl
-        tag: v1.6.0
-        commit: e521ab32b5bf315866a17f6844e5339abbc41e79
-        dest: src/github.com/nanu-c/axolotl
+        url: https://github.com/nanu-c/axolotl.git
+        #tag: v2.0.5
+        #commit: 69bf5864364e1ba9d158d493bc5c7864b78fe3a9
+        commit: 8e358f1bf9da98a5f6469dae2972d78218698743
         x-checker-data:
           type: git
-          tag-pattern: "^v([\\d.]+)$"
-
-  - name: run
-    buildsystem: simple
-    build-commands:
-      - install -Dm 755 run.sh ${FLATPAK_DEST}/bin/run.sh
-    sources:
-    - type: script
-      dest-filename: run.sh
-      commands:
-        - export DISPLAY=:0
-        - export WAYLAND_DISPLAY=wayland-0
-        - zypak-wrapper /app/bin/axolotl-electron-bundle "$@"
+          tag-pattern: ^v([\d.]+)$
+      # Generated via flatpak-node-generator
+      - node-sources.json
+      # Generated via flatpak-cargo-generator
+      - cargo-sources.json
+      # Configure yarn to use the offline mirror
+      - type: inline
+        contents: |
+          yarn-offline-mirror /run/build/axolotl/flatpak-node/yarn-mirror
+          --install.offline true
+          --run.offline true
+        dest-filename: .yarnrc
+    modules:
+      - name: abseil
+        buildsystem: cmake-ninja
+        config-opts:
+          - -DABSL_PROPAGATE_CXX_STD=ON
+          - -DCMAKE_BUILD_TYPE=RelWithDebInfo
+        cleanup:
+          - /include
+          - /lib/*.a
+          - /lib/cmake
+          - /lib/pkgconfig
+        sources:
+          - type: archive
+            url: https://github.com/abseil/abseil-cpp/releases/download/20240116.0/abseil-cpp-20240116.0.tar.gz
+            sha256: 338420448b140f0dfd1a1ea3c3ce71b3bc172071f24f4d9a57d59b45037da440
+      - name: protobuf
+        buildsystem: cmake-ninja
+        config-opts:
+          - -Dprotobuf_ABSL_PROVIDER=package
+          - -Dprotobuf_BUILD_TESTS=OFF
+          - -DCMAKE_BUILD_TYPE=RelWithDebInfo
+        cleanup:
+          - protoc
+          - /bin
+          - /doc
+          - /lib/*.a
+          - /lib/*.la
+          - /lib/libprotoc*
+          - /lib/libprotobuf-lite*
+          - /lib/plugins
+          - /lib/pkgconfig
+        sources:
+          - type: archive
+            url: https://github.com/protocolbuffers/protobuf/releases/download/v25.3/protobuf-25.3.tar.gz
+            sha256: d19643d265b978383352b3143f04c0641eea75a75235c111cc01a1350173180e
