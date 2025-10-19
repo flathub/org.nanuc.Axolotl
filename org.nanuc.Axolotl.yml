@@ -13,7 +13,7 @@ separate-locales: false
 build-options:
   append-path: "/usr/lib/sdk/rust-stable/bin:/usr/lib/sdk/golang/bin:/usr/lib/sdk/node18/bin"
   env:
-    CARGO_NET_OFFLINE: true
+    CARGO_NET_OFFLINE: "true"
     npm_config_nodedir: /usr/lib/sdk/node18
 cleanup:
   - /app/bin/astilectron-bundler
